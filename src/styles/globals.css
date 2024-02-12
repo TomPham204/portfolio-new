@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Dancing+Script:wght@500&family=Patrick+Hand&family=Pacifico&family=Uchen&family=Amatic+SC:wght@400&family=Oleo+Script+Swash+Caps&family=Handlee&family=Noto+Sans+KR:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: only light;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@keyframes textGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.text-gradient {
+	background: linear-gradient(
+		-45deg,
+		#fc1a1a,
+		#ee7752,
+		#d92ebd,
+		#1224e7,
+		#23d5ab,
+		#6e34d3,
+		#fc1a1a
+	);
+	background-clip: text;
+	background-size: 200% 200%;
+	animation: textGradient 12s ease infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+}
+
+.Typewriter {
+	display: flex;
+	justify-items: center;
+	align-items: baseline;
+	min-height: 2rem;
+}
