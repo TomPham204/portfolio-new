@@ -21,7 +21,7 @@ const NavigationBar = () => {
 
 	return (
 		<div
-			className="w-full flex justify-between items-center bg-neutral-50 fixed top-0 left-0 transition-all duration-300 nav max-h-14"
+			className="w-full flex justify-between items-center bg-neutral-50 fixed top-0 left-0 transition-all duration-300 nav max-h-14 z-50"
 			style={{ boxShadow: "3px 3px 3px rgba(63, 63, 117, 0.2)" }}
 		>
 			<Link

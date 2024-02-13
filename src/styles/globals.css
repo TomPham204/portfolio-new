@@ -31,6 +31,30 @@ body {
 	}
 }
 
+@keyframes jiggle-x {
+	0% {
+		transform: translateX(0);
+	}
+	33% {
+		transform: translateX(-5px);
+	}
+	66% {
+		transform: translateX(5px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes hue-rotate {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
 .text-gradient {
 	background: linear-gradient(
 		-45deg,
@@ -43,7 +67,7 @@ body {
 		#fc1a1a
 	);
 	background-clip: text;
-	background-size: 200% 200%;
+	background-size: 150% 150%;
 	animation: textGradient 12s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -53,6 +77,6 @@ body {
 .Typewriter {
 	display: flex;
 	justify-items: center;
-	align-items: baseline;
+	align-items: center;
 	min-height: 2rem;
 }
