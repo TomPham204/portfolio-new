@@ -45,7 +45,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2 h-full flex flex-col gap-5 justify-center items-center">
+				<div className="w-1/2 h-full flex flex-col gap-6 justify-center items-center">
 					<p className="font-['Pacifico'] text-12xl font-bold w-full text-center">
 						Meet
 					</p>
