@@ -20,7 +20,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className="w-full min-h-no-navbar mt-14 overflow-x-hidden">
 				<NavigationBar />
-				<SidePanel styles="fixed top-1/2 right-0" />
+				<SidePanel />
 				<section className={inter.className}>{children}</section>
 			</body>
 		</html>
