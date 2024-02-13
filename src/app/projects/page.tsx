@@ -44,6 +44,20 @@ export default function Projects() {
 					maxShadowOpacity={0.5}
 					showCover={true}
 					onFlip={(e) => checkIfLastPage(e.data)}
+					className={""}
+					startPage={0}
+					drawShadow={true}
+					flippingTime={0}
+					usePortrait={false}
+					startZIndex={0}
+					autoSize={true}
+					mobileScrollSupport={true}
+					clickEventForward={false}
+					useMouseEvents={true}
+					swipeDistance={0}
+					showPageCorners={true}
+					disableFlipByClick={false}
+					style={{}}
 				>
 					<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
 						<div className="w-full h-full flex justify-center items-center">
