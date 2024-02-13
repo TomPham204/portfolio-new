@@ -47,7 +47,7 @@ export default function Projects() {
 					className={""}
 					startPage={0}
 					drawShadow={true}
-					flippingTime={0}
+					flippingTime={800}
 					usePortrait={false}
 					startZIndex={0}
 					autoSize={true}

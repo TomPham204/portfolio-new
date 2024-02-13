@@ -12,7 +12,7 @@ export default function SidePanel() {
 
 	return (
 		<div
-			className="side-panel flex flex-col gap-5 justify-center items-center w-14 min-h-fit max-h-[70%] fixed top-1/2 right-0 -mr-12 hover:mr-[-2px] opacity-100 trasition-all duration-300 p-1 z-50 bg-[#ededed8d] backdrop-blur-sm"
+			className="side-panel flex flex-col gap-5 justify-center items-center w-14 min-h-fit max-h-[70%] fixed top-1/2 right-0 -mr-12 hover:mr-[-2px] opacity-100 trasition-all duration-300 p-1 z-50 bg-[#ededed8d] backdrop-blur-xs"
 			onMouseEnter={() => setShowArrow(false)}
 			onMouseLeave={() => setShowArrow(true)}
 		>

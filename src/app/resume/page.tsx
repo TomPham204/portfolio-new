@@ -16,7 +16,7 @@ export default function Resume() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 100) {
+			if (window.scrollY > 20) {
 				setShowArrow(false);
 			} else {
 				setShowArrow(true);
@@ -39,7 +39,7 @@ export default function Resume() {
 					src="/assets/resume/curvy-arrow.png"
 					alt="Arrow pointing to homepage"
 					className={
-						"absolute w-[21rem] top-2 right-[11rem] z-10 " +
+						"absolute w-[21rem] top-5 right-[11rem] z-10 " +
 						(arrowAnimation
 							? "animate-hue-rotate"
 							: "animate-none") +
@@ -93,7 +93,7 @@ export default function Resume() {
 					</object>
 				)}
 			</div>
-			<div className="fixed bottom-3 pt-8 w-full flex justify-center opacity-20 -mb-10 hover:opacity-100 hover:mb-0 transition-all duration-300">
+			<div className="fixed bottom-3 pt-8 w-full flex justify-center opacity-20 animate-pulse hover:animate-none -mb-10 hover:opacity-100 hover:mb-0 transition-all duration-300">
 				<ResumeControlPanel notifyViewChange={notifyViewChange} />
 			</div>
 		</main>
