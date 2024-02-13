@@ -3,6 +3,7 @@
 import ContactPanel from "@/components/common/ContactPanel";
 import Typewriter from "typewriter-effect";
 import "@/styles/index.module.css";
+import Image from "next/image";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -17,7 +18,7 @@ export default function Home() {
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">My current age is ${
 			currentYear - 2001
 		}.</p>`,
-		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I hate Tet holidays. It's boring and exhausted.<p>`,
+		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I hate Tet holidays. It's boring and exhausting.<p>`,
 	];
 
 	return (
@@ -25,11 +26,22 @@ export default function Home() {
 			<div className="w-11/12 mx-auto flex h-no-navbar justify-center">
 				<div className="w-1/2 h-full">
 					<div className="w-11/12 h-full relative mx-auto flex flex-col items-center justify-center">
-						<img
+						<div className="w-full h-[33vw] relative">
+							<Image
+								src="/assets/index/avatar1.png"
+								alt="Avatar"
+								fill={true}
+								layout="raw"
+								priority={true}
+								loading="eager"
+								className="w-full object-contain"
+							/>
+						</div>
+						{/* <img
 							src="/assets/index/avatar1.png"
 							alt="Avatar"
 							className="w-full object-contain"
-						/>
+						/> */}
 						<div className="flex flex-col justify-center">
 							<p className="font-PatrickHand font-bold italic text-2xl tracking-wider text-center">
 								Hi, I&apos;m Tom.

@@ -13,7 +13,6 @@ export default function ResumeLegacyDownloadPanel() {
 				Visit{" "}
 				<Link
 					href="/"
-					target="_blank"
 					className="inline-block no-underline text-gradient cursor-pointer"
 				>
 					Home

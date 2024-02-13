@@ -35,17 +35,22 @@ export default function Resume() {
 	return (
 		<main className="flex w-full h-no-navbar relative">
 			{showArrow && (
-				<img
-					src="/assets/resume/curvy-arrow.png"
-					alt="Arrow pointing to homepage"
+				<div
 					className={
-						"absolute w-[21rem] top-5 right-[11rem] z-10 " +
+						"absolute w-[21rem] h-[20rem] top-5 right-[11rem] z-10 " +
 						(arrowAnimation
 							? "animate-hue-rotate"
 							: "animate-none") +
 						(viewMode != "legacy" ? " hidden" : " block")
 					}
-				/>
+				>
+					<Image
+						src="/assets/resume/curvy-arrow.png"
+						alt="Arrow pointing to homepage"
+						fill={true}
+						objectFit="contain"
+					/>
+				</div>
 			)}
 			{viewMode == "legacy" && <ResumeLegacyDownloadPanel />}
 			<div className="h-full w-full">
@@ -55,11 +60,14 @@ export default function Resume() {
 							src="/assets/resume/PhamCongTuan - Frontend-1.png"
 							alt="Resume page 1"
 							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume-shadow mx-auto"
+							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
+
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-2.png"
 							alt="Resume page 2"
 							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume-shadow mx-auto"
+							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 						<div className="block w-full h-10 invisible">
 							placeholder
@@ -72,11 +80,13 @@ export default function Resume() {
 							src="/assets/resume/PhamCongTuan - Frontend-1.png"
 							alt="Resume page 1"
 							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-2.png"
 							alt="Resume page 2"
 							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 					</div>
 				)}
