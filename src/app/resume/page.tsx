@@ -6,33 +6,50 @@ import Image from "next/image";
 import ResumeLegacyDownloadPanel from "@/components/resume/ResumeLegacyDownloadPanel";
 
 export default function Resume() {
-	const [useLegacyView, setUseLegacyView] = useState(false);
+	const [viewMode, setViewMode] = useState("legacy");
+	const [showArrow, setShowArrow] = useState(true);
 	const [arrowAnimation, setArrowAnimation] = useState(true);
 
-	const notifyViewChange = (useLegacyView: boolean = false) => {
-		setUseLegacyView(useLegacyView);
+	const notifyViewChange = (mode: string = "compact") => {
+		setViewMode(mode);
 	};
 
 	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 100) {
+				setShowArrow(false);
+			} else {
+				setShowArrow(true);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
 		setTimeout(() => {
 			setArrowAnimation(false);
 		}, 10000);
+
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	return (
 		<main className="flex w-full h-no-navbar relative">
-			<img
-				src="/assets/resume/curvy-arrow.png"
-				alt="Arrow pointing to homepage"
-				className={
-					"absolute w-[21rem] top-2 right-[11rem] z-10 " +
-					(arrowAnimation ? "animate-hue-rotate" : "animate-none") +
-					(!useLegacyView ? " hidden" : " block")
-				}
-			/>
-			{useLegacyView && <ResumeLegacyDownloadPanel />}
+			{showArrow && (
+				<img
+					src="/assets/resume/curvy-arrow.png"
+					alt="Arrow pointing to homepage"
+					className={
+						"absolute w-[21rem] top-2 right-[11rem] z-10 " +
+						(arrowAnimation
+							? "animate-hue-rotate"
+							: "animate-none") +
+						(viewMode != "legacy" ? " hidden" : " block")
+					}
+				/>
+			)}
+			{viewMode == "legacy" && <ResumeLegacyDownloadPanel />}
 			<div className="h-full w-full">
-				{useLegacyView && (
+				{viewMode == "legacy" && (
 					<div className="h-full w-full p-5 flex flex-col items-center gap-12 mt-6">
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-1.png"
@@ -44,9 +61,26 @@ export default function Resume() {
 							alt="Resume page 2"
 							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume-shadow mx-auto"
 						/>
+						<div className="block w-full h-10 invisible">
+							placeholder
+						</div>
 					</div>
 				)}
-				{!useLegacyView && (
+				{viewMode == "dual" && (
+					<div className="h-full w-full p-3 flex items-center justify-center gap-8">
+						<img
+							src="/assets/resume/PhamCongTuan - Frontend-1.png"
+							alt="Resume page 1"
+							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+						/>
+						<img
+							src="/assets/resume/PhamCongTuan - Frontend-2.png"
+							alt="Resume page 2"
+							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+						/>
+					</div>
+				)}
+				{viewMode == "compact" && (
 					<object
 						data="/assets/resume/PhamCongTuan - Frontend.pdf"
 						type="application/pdf"
@@ -59,12 +93,7 @@ export default function Resume() {
 					</object>
 				)}
 			</div>
-			<div
-				className={
-					"h-full w-max py-2 px-5" +
-					(useLegacyView ? " fixed right-0" : "")
-				}
-			>
+			<div className="fixed bottom-3 pt-8 w-full flex justify-center opacity-20 -mb-10 hover:opacity-100 hover:mb-0 transition-all duration-300">
 				<ResumeControlPanel notifyViewChange={notifyViewChange} />
 			</div>
 		</main>
