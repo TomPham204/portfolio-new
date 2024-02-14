@@ -20,10 +20,9 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
+				MouseMemoirs: ["Mouse Memoirs", ...fontFamily.sans],
 				DancingScript: ["Dancing Script", ...fontFamily.serif],
 				PatrickHand: ["Patrick Hand", ...fontFamily.serif],
-				AmaticSC: ["Amatic SC", ...fontFamily.serif],
-				OreoScript: ["Oreo Script Swash Caps", ...fontFamily.serif],
 				NotoSansKR: ["Noto Sans KR", ...fontFamily.sans],
 				logo: [
 					"Mouse Memoirs",
@@ -74,6 +73,11 @@ const config: Config = {
 			backdropBlur: {
 				xs: "2px",
 			},
+			textShadow: {
+				sm: "0 1px 2px var(--tw-shadow-color)",
+				DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+				lg: "0 8px 16px var(--tw-shadow-color)",
+			},
 		},
 	},
 	plugins: [
@@ -88,6 +92,16 @@ const config: Config = {
 					},
 				},
 			]);
+		}),
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+				{
+					"text-shadow": (value) => ({
+						textShadow: value,
+					}),
+				},
+				{ values: theme("textShadow") }
+			);
 		}),
 		require("tailwind-scrollbar-hide"),
 	],

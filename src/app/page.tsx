@@ -4,6 +4,7 @@ import ContactPanel from "@/components/common/ContactPanel";
 import Typewriter from "typewriter-effect";
 import "@/styles/index.module.css";
 import Image from "next/image";
+import profileImage1 from "/public/assets/index/avatar1.png";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -28,20 +29,15 @@ export default function Home() {
 					<div className="w-11/12 h-full relative mx-auto flex flex-col items-center justify-center">
 						<div className="w-full h-[33vw] relative">
 							<Image
-								src="/assets/index/avatar1.png"
+								src={profileImage1}
 								alt="Avatar"
 								fill={true}
 								layout="raw"
 								priority={true}
-								loading="eager"
+								placeholder="blur"
 								className="w-full object-contain"
 							/>
 						</div>
-						{/* <img
-							src="/assets/index/avatar1.png"
-							alt="Avatar"
-							className="w-full object-contain"
-						/> */}
 						<div className="flex flex-col justify-center">
 							<p className="font-PatrickHand font-bold italic text-2xl tracking-wider text-center">
 								Hi, I&apos;m Tom.

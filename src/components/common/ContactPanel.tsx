@@ -9,7 +9,7 @@ interface ContactPanelProps {
 
 export default function ContactPanel(props?: ContactPanelProps) {
 	return (
-		<div className="panel w-fit mt-5 h-max flex gap-8 items-end justify-center border-b-2 pb-2 px-1 border-b-amber-500">
+		<div className="panel w-fit mt-5 h-max flex gap-8 items-end justify-center border-b-4 pb-2 px-1 border-b-amber-500">
 			<style jsx>
 				{`
 					${props?.styles}
