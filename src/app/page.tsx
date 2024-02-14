@@ -2,9 +2,8 @@
 
 import ContactPanel from "@/components/common/ContactPanel";
 import Typewriter from "typewriter-effect";
-import "@/styles/index.module.css";
-import Image from "next/image";
-import profileImage1 from "/public/assets/index/avatar1.png";
+import "@/styles/index.css";
+import ProfileImage from "@/components/index/ProfileImage";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -27,7 +26,7 @@ export default function Home() {
 			<div className="w-11/12 mx-auto flex h-no-navbar justify-center">
 				<div className="w-1/2 h-full">
 					<div className="w-11/12 h-full relative mx-auto flex flex-col items-center justify-center">
-						<div className="w-full h-[33vw] relative">
+						{/* <div className="w-full h-[33vw] relative">
 							<Image
 								src={profileImage1}
 								alt="Avatar"
@@ -37,7 +36,8 @@ export default function Home() {
 								placeholder="blur"
 								className="w-full object-contain"
 							/>
-						</div>
+						</div> */}
+						<ProfileImage />
 						<div className="flex flex-col justify-center">
 							<p className="font-PatrickHand font-bold italic text-2xl tracking-wider text-center">
 								Hi, I&apos;m Tom.
@@ -53,8 +53,8 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2 h-full flex flex-col gap-6 justify-center items-center">
-					<p className="font-['Pacifico'] text-12xl font-bold w-full text-center">
+				<div className="w-1/2 h-full flex flex-col gap-7 justify-center items-center">
+					<p className="font-['Pacifico'] text-11xl font-bold w-full text-center">
 						Meet
 					</p>
 					<p className="font-DancingScript font-bold text-11xl text-gradient w-full text-center">

@@ -15,9 +15,14 @@ interface Project {
 
 export default function Projects() {
 	const flipbook = useRef<typeof HTMLFlipBook>(null);
+	const [bookLength, setBookLength] = useState(0);
+
+	useEffect(() => {
+		setBookLength(webProjects.length + otherProjects.length + 4);
+	}, []);
 
 	const checkIfLastPage = (e: any) => {
-		if (e == 13) {
+		if (e >= bookLength + 1) {
 			const fireworkWrapper = document.getElementById("firework-wrapper");
 			fireworkWrapper?.classList.remove("hidden");
 			setTimeout(() => {
@@ -59,6 +64,7 @@ export default function Projects() {
 					disableFlipByClick={false}
 					style={{}}
 				>
+					{/* Book cover 1 and 2 */}
 					<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
 						<div className="w-full h-full flex justify-center items-center">
 							<p className="text-5xl font-bold text-center">
@@ -66,6 +72,19 @@ export default function Projects() {
 							</p>
 						</div>
 					</div>
+					<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
+						<div className="w-full h-full flex justify-center items-center"></div>
+					</div>
+
+					{/* Web projects */}
+					<div className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]">
+						<div className="w-full h-full flex justify-center items-center">
+							<p className="text-5xl font-bold text-center">
+								Web projects
+							</p>
+						</div>
+					</div>
+
 					{webProjects.map((project: Project, index: number) => (
 						<div
 							key={index}
@@ -95,6 +114,8 @@ export default function Projects() {
 							</div>
 						</div>
 					))}
+
+					{/* Other projects */}
 					<div className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]">
 						<div className="w-full h-full flex justify-center items-center">
 							<p className="text-5xl font-bold text-center">
@@ -102,6 +123,7 @@ export default function Projects() {
 							</p>
 						</div>
 					</div>
+
 					{otherProjects.map((project: Project, index: number) => (
 						<div
 							key={index}
@@ -131,6 +153,20 @@ export default function Projects() {
 							</div>
 						</div>
 					))}
+
+					{/* Filler page if necessary */}
+					{/* <div
+						className={
+							"inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]"
+						}
+					>
+						<div className="w-full h-full flex justify-center items-center"></div>
+					</div> */}
+
+					{/* Book cover 3 and 4 */}
+					<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
+						<div className="w-full h-full flex justify-center items-center"></div>
+					</div>
 					<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
 						<div className="w-full h-full flex justify-center items-center">
 							<p className="text-5xl font-bold text-center">
@@ -139,6 +175,7 @@ export default function Projects() {
 						</div>
 					</div>
 				</HTMLFlipBook>
+
 				<span
 					id="firework-wrapper"
 					className="overflow-hidden scrollbar-hide hidden"
@@ -193,10 +230,9 @@ const webProjects: Project[] = [
 		descriptions: [
 			"Project of Codelight: admin site + user dashboard to manage Web3's investment and usage of user.",
 			"Role: Front-end developer, back-end assistant",
-			"Notable features: Google/Github login, Stripe payment, dynamic component, complex log filtering, processing datetime and money",
-			"Front-end: VueJS (Vue 3), TypeScript, SCSS + TailwindCSS, PrimeVue",
-			"Back-end: NestJS, TypeORM, PostgresDB, QuestDB, Redis, Stripe, Elasticsearch",
-			"Tools: Docker, WSL, Postman, Swagger, Jenkin, Lens, Redmine, Clickup",
+			"Features: Authentication, Google/Github login, Stripe payment, dynamic component, complex log filtering, charts.",
+			"Front-end: VueJS, TailwindCSS, PrimeVue,...",
+			"Back-end: NestJS, PostgresDB, QuestDB,...",
 		],
 	},
 	{
