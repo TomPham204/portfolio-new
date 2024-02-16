@@ -49,6 +49,7 @@ export default function Resume() {
 						alt="Arrow pointing to homepage"
 						fill={true}
 						objectFit="contain"
+						quality={100}
 					/>
 				</div>
 			)}

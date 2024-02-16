@@ -8,11 +8,13 @@ import ProfileImage from "@/components/index/ProfileImage";
 export default function Home() {
 	const currentYear = new Date().getFullYear();
 	const selfIntroduction = [
+		'<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I\'m a web developer and a resource designer.</p>',
 		'<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I make jokes when I\'m uncomfortable.</p>',
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm an INFJ-A and my favorite pastime is collecting.</p>`,
+		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm extremely bad with recognizing faces and names.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I seek self-improvement and  a diverse range of knowledge.</p>`,
-		'<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I\'m a web developer and a resource designer.</p>',
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm always open to new opportunities in life.<p>`,
+		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I read about ways to understand myself better. To me, sleep cycle is interesting.<p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I have a small circle of friends and I'm currently single.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I love travelling abroad and experiencing new cultures.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">My current age is ${

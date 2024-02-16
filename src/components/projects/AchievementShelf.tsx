@@ -1,0 +1,56 @@
+import { useEffect } from "react";
+import ShowcaseCard from "./ShowcaseCard";
+import type { Achievement } from "./ShowcaseCard";
+import "@/styles/projects.css";
+
+export default function AchievementShelf() {
+	useEffect(() => {
+		const cards = document.querySelectorAll(".card-wrapper .bg");
+		cards.forEach((card, index) => {
+			(card as HTMLElement).style.setProperty(
+				"filter",
+				`hue-rotate(-${Math.max(
+					(index * 360) / achievements.length,
+					index * 50
+				)}deg)`
+			);
+		});
+	}, []);
+
+	return (
+		<div className="w-full h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-12 achievement-wrapper">
+			{achievements.map((achievement: Achievement, index) => {
+				return (
+					<ShowcaseCard
+						key={index}
+						achievement={achievement}
+					/>
+				);
+			})}
+		</div>
+	);
+}
+
+const achievements: Achievement[] = [
+	{
+		name: "TOEIC Certificate",
+		year: 2023,
+		proof: "",
+		issuer: "IIG Vietnam",
+		result: "High score of 990",
+	},
+	{
+		name: "Leadership Certificate",
+		year: 2022,
+		proof: "/assets/projects/leadership-cert.png",
+		issuer: "National College of Ireland",
+		result: "Course & Exam completion",
+	},
+	{
+		name: "Spiritech Camp Certificate",
+		year: 2022,
+		proof: "/assets/projects/spiritlabs-cert.png",
+		issuer: "Spirit Labs Co., Ltd.",
+		result: "Program completion",
+	},
+];
