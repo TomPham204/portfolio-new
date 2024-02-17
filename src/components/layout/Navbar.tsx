@@ -33,25 +33,26 @@ const NavigationBar = () => {
 			</Link>
 			<div className="flex items-center justify-right h-full">
 				<Link
-					className="font-menu flex items-center justify-center text-4xl bg-[#9adcff] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-3xl bg-[#9adcff] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
 					href="/"
 				>
 					Home
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-4xl bg-[#fff89a] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
-					href="/story"
+					className="font-menu flex items-center justify-center text-3xl bg-[#fff89a] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
+					target="_blank"
+					href="https://tompham-portfolio.vercel.app/my-story"
 				>
-					Story
+					Story (V1)
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-4xl bg-[#ff9a9a] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-3xl bg-[#ff9a9a] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
 					href="/projects"
 				>
 					Projects
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-4xl bg-[#d49fff] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-3xl bg-[#d49fff] py-2 w-36 hover:w-40 transition-all duration-300 ease-in-out"
 					href="/resume"
 				>
 					Resumé

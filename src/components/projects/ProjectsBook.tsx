@@ -80,7 +80,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			{webProjects.map((project: Project, index: number) => (
 				<div
 					key={index}
-					className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]"
+					className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-8 bg-[#fdfaf7]"
 				>
 					<p className="text-xl font-bold text-center">
 						{project.title}
@@ -96,7 +96,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						{project.descriptions.map((line: string, i: number) => (
 							<p
 								key={i}
-								className="text-sm text-[#785e3a] tracking-wider"
+								className="text-sm text-[#785e3a] tracking-wider text-justify"
 							>
 								{line}
 							</p>
@@ -117,7 +117,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			{otherProjects.map((project: Project, index: number) => (
 				<div
 					key={index}
-					className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]"
+					className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-8 bg-[#fdfaf7]"
 				>
 					<p className="text-xl font-bold text-center">
 						{project.title}
@@ -133,7 +133,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						{project.descriptions.map((line: string, i: number) => (
 							<p
 								key={i}
-								className="text-sm text-[#785e3a] tracking-wider"
+								className="text-sm text-[#785e3a] tracking-wider text-justify"
 							>
 								{line}
 							</p>

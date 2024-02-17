@@ -55,7 +55,7 @@ export default function Projects() {
 				<ProjectsBook notifyLastPage={notifyLastPage} />
 				<FireworkEffect isShow={showFirework && enableFirework} />
 			</div>
-			<div className="shelf w-full h-no-navbar p-5 mx-auto">
+			<div className="shelf w-full h-no-navbar p-10 mx-auto">
 				<AchievementShelf />
 			</div>
 		</main>

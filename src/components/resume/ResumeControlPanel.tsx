@@ -17,7 +17,7 @@ export default function ResumeControlPanel(props: ResumeControlPanelProps) {
 		<div className="flex items-center bg-[#e4e4e465] backdrop-blur-xs z-20 mx-auto">
 			<button
 				className={
-					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#b688ff] border-r-0 rounded-l-lg transition-all duration-300" +
+					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#bc92ff] border-r-0 rounded-l-lg transition-all duration-300" +
 					(viewMode === "compact" ? " bg-[#d6d6d6e3]" : "")
 				}
 				onClick={() => setViewMode("compact")}
@@ -26,7 +26,7 @@ export default function ResumeControlPanel(props: ResumeControlPanelProps) {
 			</button>
 			<button
 				className={
-					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#b688ff]" +
+					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#bc92ff]" +
 					(viewMode === "legacy" ? " bg-[#d6d6d6e3]" : "")
 				}
 				onClick={() => setViewMode("legacy")}
@@ -35,7 +35,7 @@ export default function ResumeControlPanel(props: ResumeControlPanelProps) {
 			</button>
 			<button
 				className={
-					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#b688ff] border-l-0 rounded-r-lg" +
+					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#bc92ff] border-l-0 rounded-r-lg" +
 					(viewMode === "dual" ? " bg-[#d6d6d6e3]" : "")
 				}
 				onClick={() => setViewMode("dual")}

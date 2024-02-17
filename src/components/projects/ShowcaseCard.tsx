@@ -10,6 +10,7 @@ export interface Achievement {
 	description?: string;
 	result: string;
 	issuer: string;
+	imageTone?: string;
 }
 
 interface ShowcaseCardProps {
@@ -47,27 +48,30 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 						<p className="text-center text-2xl font-bold">
 							{props.achievement.name}
 						</p>
-						<p className="text-left text-lg w-full">
-							Degree of achievement: {props.achievement.result}
+						<p className="text-justify text-lg tracking-wide w-full">
+							<b>Degree of achievement:</b>{" "}
+							{props.achievement.result}
 						</p>
-						<p className="text-left text-lg w-full">
-							Year: {props.achievement.year}
+						<p className="text-justify text-lg tracking-wide w-full">
+							<b>Year:</b> {props.achievement.year}
 						</p>
-						<p className="text-left text-lg w-full">
-							Issuer: {props.achievement.issuer}
+						<p className="text-justify text-lg tracking-wide w-full">
+							<b>Issuer:</b> {props.achievement.issuer}
 						</p>
 					</div>
 				</div>
-				<div className="back w-full h-full bg-slate-950 rounded-xl">
-					<Image
-						src={props.achievement.proof}
-						alt={props.achievement.name}
-						className="rounded-t-xl"
-						loading="lazy"
-						fill={true}
-						objectFit="contain"
-						quality={100}
-					/>
+				<div className="back w-full h-full rounded-xl">
+					<div className={"w-full h-full"}>
+						<Image
+							src={props.achievement.proof}
+							alt={props.achievement.name}
+							className="rounded-t-xl"
+							loading="lazy"
+							fill={true}
+							objectFit="contain"
+							quality={100}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

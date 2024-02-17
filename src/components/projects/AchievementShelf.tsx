@@ -15,10 +15,18 @@ export default function AchievementShelf() {
 				)}deg)`
 			);
 		});
+
+		const imgs = document.querySelectorAll(".card-wrapper .back img");
+		imgs.forEach((img, index) => {
+			(img as HTMLElement).style.setProperty(
+				"background-color",
+				`${achievements[index].imageTone}`
+			);
+		});
 	}, []);
 
 	return (
-		<div className="w-full h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-12 achievement-wrapper">
+		<div className="w-full h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-14 achievement-wrapper">
 			{achievements.map((achievement: Achievement, index) => {
 				return (
 					<ShowcaseCard
@@ -35,9 +43,10 @@ const achievements: Achievement[] = [
 	{
 		name: "TOEIC Certificate",
 		year: 2023,
-		proof: "",
+		proof: "/assets/projects/toeic-cert-flip.png",
 		issuer: "IIG Vietnam",
-		result: "High score of 990",
+		result: "Max score of 990",
+		imageTone: "#647989",
 	},
 	{
 		name: "Leadership Certificate",
@@ -45,6 +54,7 @@ const achievements: Achievement[] = [
 		proof: "/assets/projects/leadership-cert.png",
 		issuer: "National College of Ireland",
 		result: "Course & Exam completion",
+		imageTone: "#FCEFAF",
 	},
 	{
 		name: "Spiritech Camp Certificate",
@@ -52,5 +62,6 @@ const achievements: Achievement[] = [
 		proof: "/assets/projects/spiritlabs-cert.png",
 		issuer: "Spirit Labs Co., Ltd.",
 		result: "Program completion",
+		imageTone: "#CBCBD5",
 	},
 ];
