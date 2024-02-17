@@ -36,8 +36,11 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 				onClick={() => setIsClicked(!isClicked)}
 				style={{
 					backgroundColor: "black",
-					backgroundImage: `url("/assets/projects/card-background.jpg")`,
-					backgroundSize: "cover",
+					backgroundImage: `url("/assets/projects/card-background.png")`,
+					backgroundSize: "400%",
+					backgroundPosition: `${Math.random() * 100}% ${
+						Math.random() * 100
+					}%`,
 					backgroundRepeat: "no-repeat",
 					backgroundBlendMode: "normal",
 				}}
@@ -60,12 +63,12 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 						</p>
 					</div>
 				</div>
-				<div className="back w-full h-full rounded-xl">
+				<div className="back w-full h-full rounded-xl overflow-hidden">
 					<div className={"w-full h-full"}>
 						<Image
 							src={props.achievement.proof}
 							alt={props.achievement.name}
-							className="rounded-t-xl"
+							className="rounded-xl"
 							loading="lazy"
 							fill={true}
 							objectFit="contain"

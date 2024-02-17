@@ -60,14 +60,14 @@ export default function Resume() {
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-1.png"
 							alt="Resume page 1"
-							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume-shadow mx-auto"
+							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-2.png"
 							alt="Resume page 2"
-							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume-shadow mx-auto"
+							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 						<div className="block w-full h-10 invisible">
@@ -80,13 +80,13 @@ export default function Resume() {
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-1.png"
 							alt="Resume page 1"
-							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+							className="h-full rounded-md border border-[#5b18c1] shadow-resume"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 						<img
 							src="/assets/resume/PhamCongTuan - Frontend-2.png"
 							alt="Resume page 2"
-							className="h-full rounded-md border border-[#5b18c1] shadow-resume-shadow"
+							className="h-full rounded-md border border-[#5b18c1] shadow-resume"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 					</div>
