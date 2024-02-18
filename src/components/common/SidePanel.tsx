@@ -6,8 +6,9 @@ import "@/styles/component.css";
 import Arrow from "../../../public/assets/side_panel/Arrow";
 import Gear from "../../../public/assets/side_panel/Gear";
 import ScrollTopIcon from "../../../public/assets/side_panel/ScrollTopIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { scrollTop } from "@/helper/useWindowScroll";
+import { usePathname } from "next/navigation";
 
 export default function SidePanel() {
 	const [showArrow, setShowArrow] = useState(true);
@@ -29,7 +30,7 @@ export default function SidePanel() {
 				/>
 				<button
 					onClick={() => scrollTop()}
-					className="p-1"
+					className="p-1 transition-all duration-300 hover:brightness-125"
 				>
 					<ScrollTopIcon className="scale-0.9" />
 				</button>

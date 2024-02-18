@@ -45,7 +45,6 @@ const config: Config = {
 				"14xl": "10rem",
 				"16xl": "12rem",
 			},
-			colors: { ...colors },
 			height: {
 				...height,
 				"no-navbar": "calc(100vh - 56px)",
