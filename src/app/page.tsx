@@ -44,11 +44,11 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2 h-full flex flex-col gap-7 justify-center items-center">
-					<p className="font-['Pacifico'] text-11xl font-bold w-full text-center cursor-default">
+				<div className="w-1/2 h-full flex flex-col gap-8 justify-center items-center">
+					<p className="font-['Pacifico'] text-12xl font-bold w-full text-center cursor-default">
 						Meet
 					</p>
-					<p className="font-DancingScript font-bold text-11xl text-gradient w-full text-center cursor-default">
+					<p className="font-DancingScript font-bold text-12xl text-gradient w-full text-center cursor-default">
 						Tom Pham
 					</p>
 					<ContactPanel />

@@ -6,6 +6,7 @@ export default function ResumeLegacyDownloadPanel() {
 			<a
 				className="text-[#551a8b] border-b-2 border-[#551a8b]"
 				href="https://1drv.ms/b/s!ArPVZgo5x8MIgslfcwxjXLWNp8s__g?e=hfP1xI"
+				target="_blank"
 			>
 				Download pdf
 			</a>
