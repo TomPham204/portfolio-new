@@ -14,7 +14,7 @@ export default function Home() {
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm extremely bad with recognizing faces and names.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I seek self-improvement and  a diverse range of knowledge.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm always open to new opportunities in life.<p>`,
-		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I read about ways to understand myself better. To me, sleep cycle is interesting.<p>`,
+		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I find sleep cycle interesting.<p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I have a small circle of friends and I'm currently single.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I love travelling abroad and experiencing new cultures.</p>`,
 		`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">My current age is ${
