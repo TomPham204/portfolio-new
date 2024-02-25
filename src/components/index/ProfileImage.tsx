@@ -23,7 +23,7 @@ export default function ProfileImage() {
 				<BxsLeftArrow fill="#86afd8" />
 			</button>
 			<div className="flex gap-2 w-full">
-				<div className="w-full h-[33vw] relative">
+				<div className="w-full h-[90vw] md:h-[45vw] lg:h-[33vw] mt-40 lg:mt-0 relative">
 					<Image
 						src={profileImage1}
 						alt="Avatar"

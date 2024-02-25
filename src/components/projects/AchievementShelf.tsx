@@ -26,7 +26,7 @@ export default function AchievementShelf() {
 	}, []);
 
 	return (
-		<div className="w-full h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-14 achievement-wrapper">
+		<div className="w-full h-5/6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-8 lg:gap-14 achievement-wrapper">
 			{achievements.map((achievement: Achievement, index) => {
 				return (
 					<ShowcaseCard

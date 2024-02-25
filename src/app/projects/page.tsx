@@ -16,6 +16,7 @@ export default function Projects() {
 	const shelf = useRef<Element>();
 
 	const handleScroll = () => {
+		if (window.innerWidth < 1280) return;
 		const st = window.pageYOffset || document.documentElement.scrollTop;
 		if (st > lastScrollPosition) {
 			window.scrollBy({
@@ -51,11 +52,11 @@ export default function Projects() {
 
 	return (
 		<main className="h-no-navbar w-full p-5">
-			<div className={"book mx-auto h-no-navbar w-[130vh]"}>
+			<div className={"book h-no-navbar w-full lg:mx-auto lg:w-[130vh]"}>
 				<ProjectsBook notifyLastPage={notifyLastPage} />
 				<FireworkEffect isShow={showFirework && enableFirework} />
 			</div>
-			<div className="shelf w-full h-no-navbar p-10 mx-auto">
+			<div className="w-full h-full lg:h-no-navbar p-10 mx-auto">
 				<AchievementShelf />
 			</div>
 		</main>

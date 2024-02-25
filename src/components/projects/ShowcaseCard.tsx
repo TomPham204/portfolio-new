@@ -24,7 +24,7 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 	return (
 		<div
 			className={
-				"card-wrapper shadow-lg w-full h-full rounded-xl " +
+				"card-wrapper shadow-lg w-full md:w-5/6 xl:w-full xl:h-full rounded-xl mx-auto " +
 				(props.className || "")
 			}
 		>
@@ -46,19 +46,19 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 				}}
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg bg-gradient-to-tr from-purple-500 to-pink-500 bg-opacity-100 mix-blend-multiply rounded-xl"></div>
-				<div className="front w-full h-full p-5  rounded-xl">
+				<div className="front w-full h-full p-5 rounded-xl">
 					<div className="w-full h-full flex flex-col gap-5 items-center text-neutral-50 cursor-pointer mix-blend-normal">
-						<p className="text-center text-2xl font-bold">
+						<p className="text-center text-lg lg:text-xl xl:text-2xl font-bold">
 							{props.achievement.name}
 						</p>
-						<p className="text-justify text-lg tracking-wide w-full">
+						<p className="text-justify text-base lg:text-lg xl:text-lg tracking-wide w-full">
 							<b>Degree of achievement:</b>{" "}
 							{props.achievement.result}
 						</p>
-						<p className="text-justify text-lg tracking-wide w-full">
+						<p className="text-justify text-base lg:text-lg xl:text-lg tracking-wide w-full">
 							<b>Year:</b> {props.achievement.year}
 						</p>
-						<p className="text-justify text-lg tracking-wide w-full">
+						<p className="text-justify text-base lg:text-lg xl:text-lg tracking-wide w-full">
 							<b>Issuer:</b> {props.achievement.issuer}
 						</p>
 					</div>

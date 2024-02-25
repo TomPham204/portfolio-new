@@ -38,7 +38,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			size="stretch"
 			minWidth={315}
 			maxWidth={1000}
-			minHeight={400}
+			minHeight={500}
 			maxHeight={1533}
 			maxShadowOpacity={0.5}
 			showCover={true}
@@ -61,7 +61,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			{/* Book cover 1 and 2 */}
 			<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
 				<div className="w-full h-full flex justify-center items-center">
-					<p className="text-5xl font-bold text-center">
+					<p className="text-3xl md:text-5xl font-bold text-center">
 						My projects
 					</p>
 				</div>
@@ -73,7 +73,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			{/* Web projects */}
 			<div className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]">
 				<div className="w-full h-full flex justify-center items-center">
-					<p className="text-5xl font-bold text-center">
+					<p className="text-3xl md:text-5xl font-bold text-center">
 						Web projects
 					</p>
 				</div>
@@ -84,10 +84,10 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 					key={index}
 					className="inner-page w-full border border-[#c2b5a3] p-8 bg-[#fdfaf7] space-y-3 italic"
 				>
-					<p className="text-2xl font-bold text-center text-orange-900 font-[Handlee]">
+					<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-[Handlee]">
 						{project.title}
 					</p>
-					<p className="text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">
+					<p className="text-sm md:text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">
 						{project.descriptions[0]}
 					</p>
 					{project.preview &&
@@ -109,13 +109,13 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 								className="object-contain w-full h-auto max-h-[50%] my-2 hover:scale-105 transition-all duration-300"
 							/>
 						))}
-					<div className="flex flex-col gap-3 font-PatrickHand text-base">
+					<div className="flex flex-col gap-3 font-PatrickHand">
 						{project.descriptions
 							.slice(1)
 							.map((line: string, i: number) => (
 								<p
 									key={i}
-									className="text-lg text-[#785e3a] tracking-wider text-justify"
+									className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full text-ellipsis text-nowrap overflow-hidden"
 								>
 									{line}
 								</p>
@@ -125,7 +125,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						<a
 							href={project.link}
 							target="_blank"
-							className="text-[#785e3a] tracking-wider text-lg font-PatrickHand underline"
+							className="text-[#785e3a] tracking-wider text-sm md:text-lg font-PatrickHand underline"
 						>
 							Learn more
 						</a>
@@ -136,7 +136,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			{/* Other projects */}
 			<div className="inner-page flex flex-col items-center gap-2 border border-[#c2b5a3] p-5 bg-[#fdfaf7]">
 				<div className="w-full h-full flex justify-center items-center">
-					<p className="text-5xl font-bold text-center">
+					<p className="text-3xl md:text-5xl font-bold text-center">
 						Other projects
 					</p>
 				</div>
@@ -147,10 +147,10 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 					key={index}
 					className="inner-page w-full border border-[#c2b5a3] p-8 bg-[#fdfaf7] space-y-3 italic"
 				>
-					<p className="text-2xl font-bold text-center text-orange-900 font-[Handlee]">
+					<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-[Handlee]">
 						{project.title}
 					</p>
-					<p className="text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">
+					<p className="text-sm md:text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">
 						{project.descriptions[0]}
 					</p>
 					{project.preview &&
@@ -172,13 +172,13 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 								className="object-contain w-full h-auto max-h-[50%] my-2 hover:scale-105 transition-all duration-300"
 							/>
 						))}
-					<div className="flex flex-col gap-3 font-PatrickHand text-base">
+					<div className="flex flex-col gap-3 font-PatrickHand">
 						{project.descriptions
 							.slice(1)
 							.map((line: string, i: number) => (
 								<p
 									key={i}
-									className="text-lg text-[#785e3a] tracking-wider text-justify"
+									className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify"
 								>
 									{line}
 								</p>
@@ -188,9 +188,9 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						<a
 							href={project.link}
 							target="_blank"
-							className=""
+							className="text-[#785e3a] tracking-wider text-sm md:text-lg font-PatrickHand underline"
 						>
-							Link
+							Learn more
 						</a>
 					)}
 				</div>
@@ -207,7 +207,9 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 			</div>
 			<div className="cover-page p-5 bg-[#e3d0b5] border border-[#998466] text-[#785e3a]">
 				<div className="w-full h-full flex justify-center items-center">
-					<p className="text-5xl font-bold text-center">The end</p>
+					<p className="text-3xl md:text-5xl font-bold text-center">
+						The end
+					</p>
 				</div>
 			</div>
 		</HTMLFlipBook>

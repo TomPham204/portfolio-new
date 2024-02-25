@@ -37,7 +37,7 @@ export default function Resume() {
 			{showArrow && (
 				<div
 					className={
-						"absolute w-[21rem] h-[20rem] top-5 right-[11rem] z-10 " +
+						"hidden lg:block absolute w-[21rem] h-[20rem] top-5 right-[11rem] z-10 " +
 						(arrowAnimation
 							? "animate-hue-rotate"
 							: "animate-none") +
@@ -54,7 +54,7 @@ export default function Resume() {
 				</div>
 			)}
 			{viewMode == "legacy" && <ResumeLegacyDownloadPanel />}
-			<div className="h-full w-full">
+			<div className="h-full w-full hidden lg:block">
 				{viewMode == "legacy" && (
 					<div className="h-full w-full p-5 flex flex-col items-center gap-12 mt-6">
 						<img
@@ -76,7 +76,7 @@ export default function Resume() {
 					</div>
 				)}
 				{viewMode == "dual" && (
-					<div className="h-full w-full p-3 flex items-center justify-center gap-8">
+					<div className="h-full w-full p-3 flex items-center justify-center gap-5">
 						<img
 							src="/assets/resume/PhamCongTuan - Fullstack-1.png"
 							alt="Resume page 1"

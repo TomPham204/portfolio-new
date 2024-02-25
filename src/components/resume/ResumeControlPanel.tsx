@@ -14,7 +14,7 @@ export default function ResumeControlPanel(props: ResumeControlPanelProps) {
 	}, [viewMode]);
 
 	return (
-		<div className="flex items-center bg-[#e4e4e465] backdrop-blur-xs z-20 mx-auto">
+		<div className="hidden lg:flex items-center bg-[#e4e4e465] backdrop-blur-xs z-20 mx-auto">
 			<button
 				className={
 					"w-28 text-center border-2 border-violet-800 p-3 hover:text-shadow-sm hover:shadow-[#bc92ff] border-r-0 rounded-l-lg transition-all duration-300" +
