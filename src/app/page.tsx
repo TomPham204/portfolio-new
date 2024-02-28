@@ -24,8 +24,8 @@ export default function Home() {
 	];
 
 	return (
-		<main className="flex flex-col">
-			<div className="w-full p-8 mx-auto flex flex-col lg:flex-row gap-5 lg:gap-0 min-h-no-navbar h-auto lg:h-no-navbar justify-start lg:justify-center">
+		<main className="flex flex-col max-w-[110rem] mx-auto">
+			<div className="w-full p-8 mx-auto flex flex-col lg:flex-row gap-8 lg:gap-0 min-h-no-navbar h-auto lg:h-no-navbar justify-start lg:justify-center lg:items-center">
 				<div className="w-full lg:w-1/2 lg:h-full">
 					<div className="w-full h-full relative mx-auto flex flex-col gap-5 items-center justify-center">
 						<ProfileImage />
@@ -44,7 +44,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full lg:w-1/2 h-full flex flex-col gap-5 lg:gap-9 justify-center items-center">
+				<div className="w-full lg:w-1/2 h-full max-h-[40rem] lg:h-5/6 flex flex-col gap-5 justify-around items-center">
 					<p className="font-['Pacifico'] text-7xl lg:text-10xl xl:text-12xl font-bold w-full text-center cursor-default">
 						Meet
 					</p>

@@ -17,14 +17,14 @@ export default function ProfileImage() {
 			<button
 				className={
 					"w-fit animate-pulse hover:animate-none hover:brightness-110 transition-all duration-300 hidden lg:block" +
-					(currentImage === 1 ? " invisible" : "")
+					(currentImage === 1 ? " invisible hover:hidden" : "")
 				}
 				onClick={() => setCurrentImage(Math.max(1, currentImage - 1))}
 			>
 				<LeftArrow fill="#86afd8" />
 			</button>
 			<div className="flex lg:gap-2 w-full">
-				<div className="w-full lg:max-w-[85%] mx-auto h-auto max-h-[35vh] lg:max-h-[65vh]">
+				<div className="w-full xl:max-w-[85%] mx-auto h-auto max-h-[35vh] lg:max-h-[65vh]">
 					<Swipeable
 						onSwipeRight={() =>
 							setCurrentImage(Math.max(1, currentImage - 1))
@@ -61,7 +61,7 @@ export default function ProfileImage() {
 			<button
 				className={
 					"w-fit animate-pulse hover:animate-none hover:brightness-110 transition-all duration-300 hidden lg:block" +
-					(currentImage === 2 ? " invisible" : " ")
+					(currentImage === 2 ? " invisible hover:hidden" : " ")
 				}
 				onClick={() => setCurrentImage(Math.min(2, currentImage + 1))}
 			>

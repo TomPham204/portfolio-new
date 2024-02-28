@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { ExchangeIcon } from "../../../public/assets/projects/ExchangeIcon";
@@ -6,6 +8,7 @@ import "@/styles/projects.css";
 import LeftArrow from "../../../public/assets/projects/LeftArrow";
 import BxsRightArrow from "../../../public/assets/projects/RightArrow";
 import ProjectsTableMobile from "./ProjectsTableMobile";
+import useWindowDimensions from "@/helper/useWindowSizes";
 
 export interface Project {
 	title: string;
@@ -18,6 +21,7 @@ export interface Project {
 
 interface ProjectsBookProps {
 	notifyLastPage: () => void;
+	useMobileView: boolean;
 }
 
 export default function ProjectsBook(props: ProjectsBookProps) {
@@ -25,10 +29,18 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 	const [bookLength, setBookLength] = useState(0);
 	const [mobileViewType, setMobileViewType] = useState("web");
 	const [mobileViewIndex, setMobileViewIndex] = useState(0);
+	const { width, height } = useWindowDimensions();
+	const [useMobileView, setUseMobileView] = useState(false);
 
 	useEffect(() => {
 		setBookLength(webProjects.length + otherProjects.length + 4);
-	}, []);
+		setUseMobileView(props.useMobileView);
+	}, [props.useMobileView]);
+
+	useEffect(() => {
+		if ((width && width < 850) || (height && height < 610))
+			setUseMobileView(true);
+	}, [height, props, width]);
 
 	const checkIfLastPage = (e: any) => {
 		if (e >= bookLength + 1) {
@@ -56,7 +68,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 
 	return (
 		<>
-			<div className="hidden lg:block">
+			{!useMobileView ? (
 				<HTMLFlipBook
 					width={550}
 					height={733}
@@ -69,7 +81,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 					maxShadowOpacity={0.5}
 					showCover={true}
 					onFlip={(e) => checkIfLastPage(e.data)}
-					className={""}
+					className={"mx-auto"}
 					startPage={0}
 					drawShadow={true}
 					flippingTime={800}
@@ -239,9 +251,8 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						</div>
 					</div>
 				</HTMLFlipBook>
-			</div>
-			<div className="block lg:hidden">
-				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb] h-full">
+			) : (
+				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb] h-full w-fit mx-auto">
 					<div className="flex justify-between items-center h-max">
 						<div className="flex items-center justify-center font-PatrickHand capitalize text-xl">
 							{mobileViewType + " projects"}
@@ -291,7 +302,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 						/>
 					)}
 				</div>
-			</div>
+			)}
 		</>
 	);
 }

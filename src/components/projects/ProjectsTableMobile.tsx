@@ -8,7 +8,7 @@ interface ProjectsTableMobileProps {
 export default function ProjectsTableMobile(props: ProjectsTableMobileProps) {
 	return (
 		<div className="h-full">
-			<table className="border-0 border-separate border-spacing-0.5 bg-[#f8e0bb] font-PatrickHand text-lg h-full">
+			<table className="border-0 border-separate border-spacing-0.5 bg-[#f8e0bb] font-PatrickHand text-lg xl:text-xl h-full">
 				<tbody>
 					<tr className="h-fit">
 						<td className="p-2 border border-[#6e6e6e] flex items-start">

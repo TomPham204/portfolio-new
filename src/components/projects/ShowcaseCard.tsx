@@ -24,7 +24,7 @@ export default function ShowcaseCard(props: ShowcaseCardProps) {
 	return (
 		<div
 			className={
-				"card-wrapper shadow-lg w-full md:w-5/6 xl:w-full xl:h-full rounded-xl mx-auto " +
+				"card-wrapper shadow-lg w-full md:w-5/6 xl:w-full aspect-[3/4] rounded-xl mx-auto " +
 				(props.className || "")
 			}
 		>
