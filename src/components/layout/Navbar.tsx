@@ -33,26 +33,26 @@ const NavigationBar = () => {
 			</Link>
 			<div className="flex items-center justify-right h-full w-full lg:w-fit">
 				<Link
-					className="font-menu flex items-center justify-center text-3xl bg-[#9adcff] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-2xl md:text-3xl bg-[#9adcff] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
 					href="/"
 				>
 					Home
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-3xl bg-[#fff89a] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-2xl md:text-3xl bg-[#fff89a] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
 					target="_blank"
 					href="https://tompham-portfolio.vercel.app/my-story"
 				>
 					Story (V1)
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-3xl bg-[#ff9a9a] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-2xl md:text-3xl bg-[#ff9a9a] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
 					href="/projects"
 				>
 					Projects
 				</Link>
 				<Link
-					className="font-menu flex items-center justify-center text-3xl bg-[#d49fff] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
+					className="font-menu flex items-center justify-center text-2xl md:text-3xl bg-[#d49fff] py-2 w-1/4 lg:w-36 lg:hover:w-40 transition-all duration-300 ease-in-out"
 					href="/resume"
 				>
 					Resumé
