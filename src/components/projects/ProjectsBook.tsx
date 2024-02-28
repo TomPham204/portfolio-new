@@ -56,7 +56,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 
 	return (
 		<>
-			<div className="hidden lg:block ">
+			<div className="hidden lg:block">
 				<HTMLFlipBook
 					width={550}
 					height={733}
@@ -241,12 +241,12 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 				</HTMLFlipBook>
 			</div>
 			<div className="block lg:hidden">
-				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb]">
-					<div className="flex justify-between items-center">
+				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb] h-full">
+					<div className="flex justify-between items-center h-max">
 						<div className="flex items-center justify-center font-PatrickHand capitalize text-xl">
 							{mobileViewType + " projects"}
 						</div>
-						<div className="flex items-center justify-end gap-3">
+						<div className="flex items-center justify-end gap-4">
 							<button
 								onClick={handleMobileViewTypeChange}
 								className=""

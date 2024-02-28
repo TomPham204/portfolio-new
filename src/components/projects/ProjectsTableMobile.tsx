@@ -7,10 +7,10 @@ interface ProjectsTableMobileProps {
 
 export default function ProjectsTableMobile(props: ProjectsTableMobileProps) {
 	return (
-		<div className="">
-			<table className="border-0 border-separate border-spacing-0.5 bg-[#f8e0bb] font-PatrickHand text-lg">
+		<div className="h-full">
+			<table className="border-0 border-separate border-spacing-0.5 bg-[#f8e0bb] font-PatrickHand text-lg h-full">
 				<tbody>
-					<tr>
+					<tr className="h-fit">
 						<td className="p-2 border border-[#6e6e6e] flex items-start">
 							<p className="">Name</p>
 						</td>
@@ -18,7 +18,7 @@ export default function ProjectsTableMobile(props: ProjectsTableMobileProps) {
 							<p className="">{props.project.title}</p>
 						</td>
 					</tr>
-					<tr>
+					<tr className="h-fit">
 						<td className="p-2 border border-[#6e6e6e]">
 							<p className="">Description</p>
 						</td>
@@ -48,7 +48,7 @@ export default function ProjectsTableMobile(props: ProjectsTableMobileProps) {
 						</td>
 					</tr>
 					{props.project.preview && (
-						<tr>
+						<tr className="h-full">
 							<td className="p-2 border border-[#6e6e6e]">
 								<p className="">Preview</p>
 							</td>

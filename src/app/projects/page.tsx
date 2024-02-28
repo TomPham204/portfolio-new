@@ -51,10 +51,10 @@ export default function Projects() {
 	};
 
 	return (
-		<main className="h-no-navbar w-full p-5">
+		<main className="min-h-no-navbar w-full">
 			<div
 				className={
-					"book min-h-fit lg:min-h-no-navbar w-full lg:mx-auto lg:w-[130vh]"
+					"book p-5 min-h-no-navbar w-full lg:mx-auto lg:w-[130vh] flex flex-col items-center justify-center lg:block"
 				}
 			>
 				<ProjectsBook notifyLastPage={notifyLastPage} />
