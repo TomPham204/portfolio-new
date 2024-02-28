@@ -16,7 +16,7 @@ export default function ProfileImage() {
 		<div className="relative w-full flex items-center gap-2">
 			<button
 				className={
-					"w-fit hover:animate-pulse hidden lg:block" +
+					"w-fit animate-pulse hover:animate-none hover:brightness-110 transition-all duration-300 hidden lg:block" +
 					(currentImage === 1 ? " invisible" : "")
 				}
 				onClick={() => setCurrentImage(Math.max(1, currentImage - 1))}
@@ -60,7 +60,7 @@ export default function ProfileImage() {
 			</div>
 			<button
 				className={
-					"w-fit hover:animate-pulse hidden lg:block" +
+					"w-fit animate-pulse hover:animate-none hover:brightness-110 transition-all duration-300 hidden lg:block" +
 					(currentImage === 2 ? " invisible" : " ")
 				}
 				onClick={() => setCurrentImage(Math.min(2, currentImage + 1))}
