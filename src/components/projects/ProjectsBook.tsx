@@ -343,7 +343,7 @@ const webProjects: Project[] = [
 			"Admin site + user dashboard to manage Web3's investment and usage of user.",
 			"Role: Front-end developer, back-end assistant",
 			"Features: Authentication, Google/Github login, Stripe payment, dynamic component, complex log filtering, charts.",
-			"Built with VueJS + NestJS + PostgresDB.",
+			"Built with VueJS + NestJS + PostgreSQL.",
 		],
 		link: "https://dapi.massbitroute.net/",
 		preview: "/assets/projects/massbit.jpg",
@@ -354,7 +354,7 @@ const webProjects: Project[] = [
 		descriptions: [
 			"Tutors – learners matching website.",
 			"Features: Authentication, Google/Github login, Stripe payment, real-time chat",
-			"Built with VueJS + TailwindCSS + NestJS + PostgresDB.",
+			"Built with VueJS + Tailwind CSS + NestJS + PostgreSQL.",
 			"Responsible for everything from design, code, to deployment",
 		],
 		previewType: "image",
@@ -363,7 +363,7 @@ const webProjects: Project[] = [
 		title: "Portfolio V2 (2024)",
 		descriptions: [
 			"An improvement on Portfolio V1 with better coding, redesigned flows, more consistent styling and more implementation of front-end stuff.",
-			"Built with NextJS + TailwindCSS. Deployed on Vercel.",
+			"Built with NextJS + Tailwind CSS. Deployed on Vercel.",
 			"Responsible for everything from design, code, to deployment",
 		],
 		link: "https://tompham-portfolio-v2.vercel.app/",
