@@ -52,7 +52,11 @@ export default function Projects() {
 
 	return (
 		<main className="h-no-navbar w-full p-5">
-			<div className={"book h-no-navbar w-full lg:mx-auto lg:w-[130vh]"}>
+			<div
+				className={
+					"book min-h-fit lg:min-h-no-navbar w-full lg:mx-auto lg:w-[130vh]"
+				}
+			>
 				<ProjectsBook notifyLastPage={notifyLastPage} />
 				<FireworkEffect isShow={showFirework && enableFirework} />
 			</div>

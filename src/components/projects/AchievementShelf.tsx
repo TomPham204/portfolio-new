@@ -45,7 +45,7 @@ const achievements: Achievement[] = [
 		year: 2023,
 		proof: "/assets/projects/toeic-cert-flip.png",
 		issuer: "IIG Vietnam",
-		result: "Max score of 990",
+		result: "Full score of 990",
 		imageTone: "#647989",
 	},
 	{
