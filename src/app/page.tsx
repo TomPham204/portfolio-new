@@ -25,9 +25,9 @@ export default function Home() {
 
 	return (
 		<main className="flex flex-col">
-			<div className="w-11/12 mx-auto flex flex-col lg:flex-row h-no-navbar justify-center">
-				<div className="w-full lg:w-1/2 h-[35vh] lg:h-full">
-					<div className="w-11/12 h-full relative mx-auto flex flex-col items-center justify-center">
+			<div className="w-full p-8 mx-auto flex flex-col lg:flex-row gap-3 lg:gap-0 h-no-navbar justify-center">
+				<div className="w-full lg:w-1/2 lg:h-full">
+					<div className="w-full h-full relative mx-auto flex flex-col gap-5 items-center justify-center">
 						<ProfileImage />
 						<div className="hidden lg:flex flex-col justify-center cursor-default">
 							<p className="font-PatrickHand font-bold italic text-2xl tracking-wider text-center">
@@ -44,11 +44,11 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full lg:w-1/2 h-full mt-20 lg:mt-0 flex flex-col gap-8 justify-center items-center">
-					<p className="font-['Pacifico'] text-6xl lg:text-12xl font-bold w-full text-center cursor-default">
+				<div className="w-full lg:w-1/2 h-full flex flex-col gap-5 lg:gap-9 justify-center items-center">
+					<p className="font-['Pacifico'] text-8xl lg:text-10xl xl:text-12xl font-bold w-full text-center cursor-default">
 						Meet
 					</p>
-					<p className="font-DancingScript font-bold text-6xl lg:text-12xl text-gradient w-full text-center cursor-default">
+					<p className="font-DancingScript font-bold text-8xl lg:text-10xl xl:text-12xl text-gradient w-full text-center cursor-default">
 						Tom Pham
 					</p>
 					<ContactPanel />

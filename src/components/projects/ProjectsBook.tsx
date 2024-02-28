@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { ExchangeIcon } from "../../../public/assets/projects/ExchangeIcon";
 import "@/styles/projects.css";
-import BxsLeftArrow from "../../../public/assets/projects/LeftArrow";
+import LeftArrow from "../../../public/assets/projects/LeftArrow";
 import BxsRightArrow from "../../../public/assets/projects/RightArrow";
 import ProjectsTableMobile from "./ProjectsTableMobile";
 
@@ -241,7 +241,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 				</HTMLFlipBook>
 			</div>
 			<div className="block lg:hidden">
-				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-lg p-4 shadow-sm bg-[#f8e0bb]">
+				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb]">
 					<div className="flex justify-between items-center">
 						<div className="flex items-center justify-center font-PatrickHand capitalize text-xl">
 							{mobileViewType + " projects"}
@@ -262,7 +262,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									handleMobileViewPageChange("prev")
 								}
 							>
-								<BxsLeftArrow
+								<LeftArrow
 									fill="#b19b79"
 									className="hover:animate-pulse transition-all duration-300"
 								/>
