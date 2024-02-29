@@ -12,6 +12,7 @@ export default function Resume() {
 
 	const notifyViewChange = (mode: string = "compact") => {
 		setViewMode(mode);
+		setShowArrow(mode == "legacy");
 	};
 
 	useEffect(() => {
@@ -33,7 +34,7 @@ export default function Resume() {
 	}, []);
 
 	return (
-		<main className="flex w-full h-no-navbar relative">
+		<main className="flex flex-col w-full h-no-navbar relative">
 			{showArrow && (
 				<div
 					className={
@@ -54,20 +55,20 @@ export default function Resume() {
 				</div>
 			)}
 			{viewMode == "legacy" && <ResumeLegacyDownloadPanel />}
-			<div className="h-full w-full hidden lg:block">
+			<div className="h-full w-full">
 				{viewMode == "legacy" && (
 					<div className="h-full w-full p-5 flex flex-col items-center gap-12 mt-6">
 						<img
 							src="/assets/resume/PhamCongTuan - Fullstack-1.png"
 							alt="Resume page 1"
-							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
+							className="w-full lg:w-[70vw] lg:min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 
 						<img
 							src="/assets/resume/PhamCongTuan - Fullstack-2.png"
 							alt="Resume page 2"
-							className="w-[70vw] min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
+							className="w-full lg:w-[70vw] lg:min-w-[60rem] h-auto rounded-md border border-[#5b18c1] shadow-resume mx-auto"
 							style={{ transform: "translate3d(0, 0, 0)" }}
 						/>
 						<div className="block w-full h-10 invisible">

@@ -54,10 +54,14 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 				? webProjects.length
 				: otherProjects.length;
 
-		if (mobileViewIndex >= arrayLength - 1) {
+		if (
+			(mobileViewIndex >= arrayLength - 1 && direction === "next") ||
+			(mobileViewIndex <= 0 && direction === "prev")
+		) {
 			handleMobileViewTypeChange();
 		} else {
-			setMobileViewIndex(mobileViewIndex + 1);
+			if (direction === "prev") setMobileViewIndex(mobileViewIndex - 1);
+			else setMobileViewIndex(mobileViewIndex + 1);
 		}
 	};
 
@@ -153,7 +157,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									.map((line: string, i: number) => (
 										<p
 											key={i}
-											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full text-ellipsis text-nowrap overflow-hidden"
+											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full overflow-x-hidden overflow-y-scroll"
 										>
 											{line}
 										</p>
@@ -252,12 +256,12 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 					</div>
 				</HTMLFlipBook>
 			) : (
-				<div className="border-2 border-[#737373] flex flex-col gap-2 rounded-xl p-4 shadow-sm bg-[#f8e0bb] h-full w-fit mx-auto">
-					<div className="flex justify-between items-center h-max">
+				<div className="border-2 border-[#737373] flex flex-col gap-1 rounded-xl p-4 shadow-sm bg-[#f8e0bb] h-full w-fit mx-auto">
+					<div className="flex justify-between items-center h-max gap-3">
 						<div className="flex items-center justify-center font-PatrickHand capitalize text-xl">
 							{mobileViewType + " projects"}
 						</div>
-						<div className="flex items-center justify-end gap-4">
+						<div className="flex items-center justify-end gap-5">
 							<button
 								onClick={handleMobileViewTypeChange}
 								className=""
