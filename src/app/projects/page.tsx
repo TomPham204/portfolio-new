@@ -19,31 +19,25 @@ export default function Projects() {
 	const book = useRef<Element>();
 	const shelf = useRef<Element>();
 
-	const handleScroll = () => {
-		if (window.innerWidth < 1280) return;
-		const st = window.pageYOffset || document.documentElement.scrollTop;
-		if (st > lastScrollPosition) {
-			window.scrollBy({
-				top: document.body.scrollHeight,
-				behavior: "auto",
-			});
-		} else {
-			window.scrollTo({ top: 0, behavior: "auto" });
-		}
-		lastScrollPosition = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-	};
-
 	useEffect(() => {
-		book.current = document.querySelector(".book")!;
-		shelf.current = document.querySelector(".shelf")!;
-		const handleScrollEvent = (e: Event) => {
+		const handleScrollEvent = (e: WheelEvent) => {
 			e.preventDefault();
-			handleScroll();
+			if (e.deltaY < 0) {
+				window.scrollTo({
+					top: window.scrollY - window.innerHeight,
+					behavior: "smooth",
+				});
+			} else {
+				window.scrollTo({
+					top: window.scrollY + window.innerHeight,
+					behavior: "smooth",
+				});
+			}
 		};
 
-		window.addEventListener("scroll", handleScrollEvent);
+		window.addEventListener("wheel", handleScrollEvent);
 
-		return () => window.removeEventListener("scroll", handleScrollEvent);
+		return () => window.removeEventListener("wheel", handleScrollEvent);
 	}, []);
 
 	useEffect(() => {

@@ -18,6 +18,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<link
+					rel="icon"
+					href="/assets/common/logo.png"
+				/>
+			</head>
 			<body className="w-full min-h-no-navbar mt-14 overflow-x-hidden">
 				<NavigationBar />
 				<SidePanel />
