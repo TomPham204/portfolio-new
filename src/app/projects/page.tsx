@@ -15,10 +15,6 @@ export default function Projects() {
 	const [enableMobileView, setEnableMobileView] = useState(false);
 	const { width, height } = useWindowDimensions();
 
-	let lastScrollPosition = 0;
-	const book = useRef<Element>();
-	const shelf = useRef<Element>();
-
 	useEffect(() => {
 		const handleScrollEvent = (e: WheelEvent) => {
 			e.preventDefault();
@@ -42,9 +38,9 @@ export default function Projects() {
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (!!width && !!height && width / height < 4 / 3) {
+			if (!!width && !!height && width / height < 4 / 3)
 				setEnableMobileView(true);
-			} else setEnableMobileView(false);
+			else setEnableMobileView(false);
 		};
 		handleResize();
 		window.addEventListener("resize", handleResize);

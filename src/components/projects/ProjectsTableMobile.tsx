@@ -29,7 +29,7 @@ export default function ProjectsTableMobile(props: ProjectsTableMobileProps) {
 										key={i}
 										className=""
 									>
-										◾ {line}
+										{line}
 									</p>
 								)
 							)}

@@ -56,7 +56,7 @@ const dancingScript = Dancing_Script({
 	display: "swap",
 });
 const patrickHand = Patrick_Hand({
-	subsets: ["latin"],
+	subsets: ["latin-ext"],
 	variable: "--font-patrickHand",
 	weight: "400",
 	display: "swap",

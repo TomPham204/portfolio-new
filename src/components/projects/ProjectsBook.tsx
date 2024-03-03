@@ -6,7 +6,7 @@ import HTMLFlipBook from "react-pageflip";
 import { ExchangeIcon } from "../../../public/assets/projects/ExchangeIcon";
 import "@/styles/projects.css";
 import LeftArrow from "../../../public/assets/projects/LeftArrow";
-import BxsRightArrow from "../../../public/assets/projects/RightArrow";
+import RightArrow from "../../../public/assets/projects/RightArrow";
 import ProjectsTableMobile from "./ProjectsTableMobile";
 import useWindowDimensions from "@/helper/useWindowSizes";
 
@@ -157,7 +157,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									.map((line: string, i: number) => (
 										<p
 											key={i}
-											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full overflow-x-hidden overflow-y-scroll"
+											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full overflow-hidden"
 										>
 											{line}
 										</p>
@@ -288,7 +288,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									handleMobileViewPageChange("next")
 								}
 							>
-								<BxsRightArrow
+								<RightArrow
 									fill="#b19b79"
 									className="hover:animate-pulse transition-all duration-300"
 								/>
