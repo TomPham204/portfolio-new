@@ -19,11 +19,55 @@ interface CustomNodeProps {
 			bottom?: boolean;
 			left?: boolean;
 		};
+		id?: string;
+		isHighlighted?: boolean;
 	};
 }
 
 const CustomNode = ({ data }: CustomNodeProps) => {
 	if (!data.source && !data.target) return;
+	if (data.isHighlighted == undefined) data.isHighlighted = false;
+
+	const getNodeStyleById = (id: string) => {
+		let classes = "border-black ";
+		if (parseInt(id) < 10) {
+			switch (id) {
+				case "1":
+					classes +=
+						"bg-gradient-to-br from-sky-800 to-fuchsia-800 text-neutral-50 font-bold brightness-110 animate-hue-rotate ";
+					break;
+				case "2":
+					classes +=
+						"bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 border-fuchsia-500 ";
+					break;
+				case "3":
+					classes +=
+						"bg-gradient-to-br from-green-500 to-cyan-500 text-neutral-50 border-green-500 ";
+					break;
+				case "4":
+					classes +=
+						"bg-gradient-to-br from-blue-500 to-cyan-500 text-neutral-50 border-blue-500 ";
+					break;
+				case "5":
+					classes +=
+						"bg-gradient-to-br from-yellow-400 to-orange-500 text-neutral-50 border-orange-500 ";
+					break;
+				case "6":
+					classes +=
+						"bg-gradient-to-br from-red-500 to-pink-300 text-neutral-50 border-red-500 ";
+					break;
+			}
+		} else {
+			if (id.startsWith("2")) classes += "!border-fuchsia-500";
+			else if (id.startsWith("3")) classes += "border-green-500";
+			else if (id.startsWith("4")) classes += "border-blue-500";
+			else if (id.startsWith("5")) classes += "border-orange-500";
+			else if (id.startsWith("6")) classes += "border-red-500";
+		}
+
+		if (data.isHighlighted) classes += " saturate-200 hue-rotate-30 ";
+		return classes;
+	};
 
 	return (
 		<div key={data.label}>
@@ -102,9 +146,8 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 
 			<div
 				className={
-					"text-lg text-center min-w-[8rem] p-2 border border-black bg-white rounded " +
-					(data.label == "My skills" &&
-						"bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 font-bold")
+					"text-lg text-center min-w-[9rem] p-2 border-2 cursor-pointer bg-white transition-all duration-200 rounded " +
+					getNodeStyleById(data.id!)
 				}
 			>
 				{data.label}
@@ -120,6 +163,7 @@ function getNodesAndConnections(data: any) {
 			position: data.position,
 			type: "customNode",
 			data: {
+				id: data.id,
 				label: data.label,
 				source: { top: true, right: true, bottom: true, left: true },
 				target: {
@@ -215,6 +259,7 @@ function getNodesAndConnections(data: any) {
 					position: child.position,
 					type: "customNode",
 					data: {
+						id: child.id,
 						label: child.label,
 						target: { [child.targetPosition]: true },
 						source: ["top", "right", "bottom", "left"]
@@ -236,22 +281,35 @@ function getNodesAndConnections(data: any) {
 }
 
 export default function TechMindmap() {
+	const [[nodes, connections], setData] = useState(() =>
+		getNodesAndConnections(cells)
+	);
 	const nodeTypes = useMemo(
 		() => ({
 			customNode: CustomNode,
 		}),
 		[]
 	);
-	const [nodes, connections] = useMemo(
-		() => getNodesAndConnections(cells),
-		[]
-	);
 
-	console.log("Nodes:", nodes);
-	console.log("Connections:", connections);
+	const highlightChildren = (node: any, nodes: Array<any>) => {
+		if (!node || !nodes || !node?.data || nodes?.length == 0) return;
+		const children = nodes.filter((n: any) => n.id.startsWith(node.id));
+		children.forEach((child: any) => {
+			child.data.isHighlighted = true;
+		});
+		setData([nodes, connections]);
+	};
+
+	const unHighlightChildren = (nodes: any) => {
+		if (nodes.length == 0) return;
+		nodes.forEach((node: any) => {
+			node.data.isHighlighted = false;
+		});
+		setData([nodes, connections]);
+	};
 
 	return (
-		<div className="w-screen lg:w-[80vw] h-[85vh] rounded shadow-md mx-auto">
+		<div className="w-screen lg:w-[80vw] h-[85vh] rounded-lg shadow-md mx-auto border-2 border-[#4683b8]">
 			{nodes.length && (
 				<ReactFlow
 					nodes={nodes}
@@ -259,6 +317,13 @@ export default function TechMindmap() {
 					edges={connections}
 					fitView
 					className="rounded-lg bg-neutral-100"
+					onNodeMouseEnter={(e, node) => {
+						unHighlightChildren(nodes);
+						highlightChildren(node, nodes);
+					}}
+					onNodeMouseLeave={() => {
+						unHighlightChildren(nodes);
+					}}
 				>
 					<Controls />
 				</ReactFlow>
@@ -270,29 +335,29 @@ export default function TechMindmap() {
 const fe = {
 	id: "2",
 	label: "Front-end",
-	position: { x: 0, y: -220 },
+	position: { x: 0, y: -230 },
 	children: [
 		{
 			id: "21",
 			label: "Basics",
-			position: { x: -200, y: -380 },
+			position: { x: -170, y: -420 },
 			children: [
 				{
 					id: "211",
 					label: "HTML",
-					position: { x: -420, y: -530 },
+					position: { x: -370, y: -570 },
 					children: [],
 				},
 				{
 					id: "212",
 					label: "CSS",
-					position: { x: -500, y: -430 },
+					position: { x: -450, y: -480 },
 					children: [],
 				},
 				{
 					id: "213",
 					label: "JavaScript",
-					position: { x: -450, y: -330 },
+					position: { x: -420, y: -380 },
 					children: [],
 				},
 			],
@@ -300,30 +365,30 @@ const fe = {
 		{
 			id: "22",
 			label: "Frameworks & Libs",
-			position: { x: -130, y: -520 },
+			position: { x: -100, y: -570 },
 			children: [
 				{
 					id: "221",
 					label: "ReactJS",
-					position: { x: -300, y: -680 },
+					position: { x: -250, y: -690 },
 					children: [],
 				},
 				{
 					id: "222",
 					label: "NextJS",
-					position: { x: -200, y: -780 },
+					position: { x: -200, y: -800 },
 					children: [],
 				},
 				{
 					id: "223",
 					label: "Remix",
-					position: { x: -20, y: -780 },
+					position: { x: -20, y: -800 },
 					children: [],
 				},
 				{
 					id: "224",
 					label: "VueJS",
-					position: { x: 50, y: -680 },
+					position: { x: 50, y: -690 },
 					children: [],
 				},
 			],
@@ -331,12 +396,12 @@ const fe = {
 		{
 			id: "23",
 			label: "Preprocessors",
-			position: { x: 130, y: -520 },
+			position: { x: 130, y: -500 },
 			children: [
 				{
 					id: "231",
 					label: "SCSS",
-					position: { x: 270, y: -650 },
+					position: { x: 250, y: -650 },
 					children: [],
 				},
 			],
@@ -349,13 +414,13 @@ const fe = {
 				{
 					id: "241",
 					label: "TailwindCSS",
-					position: { x: 400, y: -550 },
+					position: { x: 370, y: -550 },
 					children: [],
 				},
 				{
 					id: "242",
 					label: "Bootstrap",
-					position: { x: 500, y: -420 },
+					position: { x: 470, y: -450 },
 					children: [],
 				},
 			],
@@ -365,17 +430,17 @@ const fe = {
 const be = {
 	id: "3",
 	label: "Back-end",
-	position: { x: 280, y: 80 },
+	position: { x: 300, y: 50 },
 	children: [
 		{
 			id: "31",
 			label: "Frameworks & Libs",
-			position: { x: 500, y: -150 },
+			position: { x: 570, y: -100 },
 			children: [
 				{
 					id: "311",
 					label: "NestJS",
-					position: { x: 750, y: -280 },
+					position: { x: 850, y: -300 },
 					children: [],
 				},
 			],
@@ -383,42 +448,42 @@ const be = {
 		{
 			id: "32",
 			label: "GraphQL",
-			position: { x: 500, y: 250 },
+			position: { x: 540, y: 190 },
 			children: [],
 		},
 		{
 			id: "33",
 			label: "RESTful APIs",
-			position: { x: 580, y: -50 },
+			position: { x: 540, y: -200 },
 			children: [],
 		},
 		{
 			id: "34",
 			label: "WebSockets",
-			position: { x: 570, y: 150 },
+			position: { x: 600, y: 95 },
 			children: [],
 		},
 		{
 			id: "35",
 			label: "Databases",
-			position: { x: 600, y: 50 },
+			position: { x: 620, y: -5 },
 			children: [
 				{
 					id: "351",
 					label: "PostgreSQL",
-					position: { x: 820, y: -80 },
+					position: { x: 920, y: -100 },
 					children: [],
 				},
 				{
 					id: "352",
 					label: "QuestDB",
-					position: { x: 820, y: 10 },
+					position: { x: 920, y: -30 },
 					children: [],
 				},
 				{
 					id: "353",
 					label: "ORM",
-					position: { x: 820, y: 100 },
+					position: { x: 920, y: 40 },
 					children: [],
 				},
 			],
@@ -428,17 +493,17 @@ const be = {
 const devops = {
 	id: "4",
 	label: "DevOps",
-	position: { x: -200, y: 0 },
+	position: { x: 120, y: 270 },
 	children: [
 		{
 			id: "41",
 			label: "CI/CD",
-			position: { x: -200, y: 0 },
+			position: { x: 0, y: 520 },
 			children: [
 				// {
 				// 	id: "411",
 				// 	label: "GitHub Actions",
-				//
+				// 	position: { x: -200, y: 0 },
 				// 	children: [],
 				// },
 			],
@@ -446,18 +511,18 @@ const devops = {
 		{
 			id: "42",
 			label: "Containers",
-			position: { x: -200, y: 0 },
+			position: { x: 200, y: 620 },
 			children: [
 				{
 					id: "421",
 					label: "Docker",
-					position: { x: -200, y: 0 },
+					position: { x: 120, y: 850 },
 					children: [],
 				},
 				{
 					id: "422",
 					label: "Kubernetes",
-					position: { x: -200, y: 0 },
+					position: { x: 300, y: 880 },
 					children: [],
 				},
 			],
@@ -465,7 +530,7 @@ const devops = {
 		{
 			id: "43",
 			label: "Monitoring",
-			position: { x: -200, y: 0 },
+			position: { x: 400, y: 580 },
 			children: [
 				// {
 				// 	id: "431",
@@ -484,12 +549,12 @@ const devops = {
 		{
 			id: "44",
 			label: "Cloud",
-			position: { x: -200, y: 0 },
+			position: { x: 570, y: 400 },
 			children: [
 				{
 					id: "441",
 					label: "GCP",
-
+					position: { x: 850, y: 370 },
 					children: [],
 				},
 			],
@@ -497,7 +562,7 @@ const devops = {
 		{
 			id: "45",
 			label: "Security",
-			position: { x: -200, y: 0 },
+			position: { x: 570, y: 500 },
 			children: [
 				// {
 				// 	id: "451",
@@ -512,23 +577,23 @@ const devops = {
 const tools = {
 	id: "5",
 	label: "Tools",
-	position: { x: -300, y: 0 },
+	position: { x: -300, y: -70 },
 	children: [
 		{
 			id: "51",
 			label: "Version Control",
-			position: { x: -600, y: -130 },
+			position: { x: -600, y: -250 },
 			children: [
 				{
 					id: "511",
 					label: "Git",
-					position: { x: -820, y: -250 },
+					position: { x: -820, y: -400 },
 					children: [],
 				},
 				{
 					id: "512",
 					label: "Bitbucket",
-					position: { x: -860, y: -160 },
+					position: { x: -870, y: -320 },
 					children: [],
 				},
 			],
@@ -536,18 +601,18 @@ const tools = {
 		{
 			id: "52",
 			label: "Container",
-			position: { x: -670, y: 30 },
+			position: { x: -650, y: -130 },
 			children: [
 				{
 					id: "521",
 					label: "Lens",
-					position: { x: -950, y: -40 },
+					position: { x: -950, y: -200 },
 					children: [],
 				},
 				{
 					id: "522",
 					label: "WSL",
-					position: { x: -930, y: 70 },
+					position: { x: -970, y: -120 },
 					children: [],
 				},
 			],
@@ -555,24 +620,24 @@ const tools = {
 		{
 			id: "53",
 			label: "Progress tracking",
-			position: { x: -630, y: 200 },
+			position: { x: -630, y: 0 },
 			children: [
 				{
 					id: "531",
 					label: "Redmine",
-					position: { x: -880, y: 180 },
+					position: { x: -950, y: -30 },
 					children: [],
 				},
 				{
 					id: "532",
 					label: "Clickup",
-					position: { x: -850, y: 280 },
+					position: { x: -970, y: 50 },
 					children: [],
 				},
 				{
 					id: "533",
-					label: "Trello (Kanban)",
-					position: { x: -810, y: 370 },
+					label: "Trello",
+					position: { x: -940, y: 130 },
 					children: [],
 				},
 			],
@@ -582,23 +647,23 @@ const tools = {
 const others = {
 	id: "6",
 	label: "Others",
-	position: { x: -170, y: 250 },
+	position: { x: -250, y: 230 },
 	children: [
 		{
 			id: "61",
 			label: "English",
-			position: { x: -550, y: 450 },
+			position: { x: -570, y: 270 },
 			children: [
 				{
 					id: "611",
 					label: "TOEIC 990",
-					position: { x: -850, y: 500 },
+					position: { x: -900, y: 230 },
 					children: [],
 				},
 				{
 					id: "612",
 					label: "IELTS 7.0",
-					position: { x: -830, y: 590 },
+					position: { x: -880, y: 320 },
 					children: [],
 				},
 			],
@@ -606,18 +671,18 @@ const others = {
 		{
 			id: "62",
 			label: "Agile",
-			position: { x: -500, y: 580 },
+			position: { x: -570, y: 400 },
 			children: [
 				{
 					id: "621",
 					label: "Scrum",
-					position: { x: -790, y: 680 },
+					position: { x: -850, y: 430 },
 					children: [],
 				},
 				{
 					id: "622",
 					label: "Kanban",
-					position: { x: -750, y: 770 },
+					position: { x: -850, y: 510 },
 					children: [],
 				},
 			],
@@ -625,30 +690,30 @@ const others = {
 		{
 			id: "63",
 			label: "Multimedia",
-			position: { x: -280, y: 630 },
+			position: { x: -500, y: 550 },
 			children: [
 				{
 					id: "631",
 					label: "Adobe Premiere",
-					position: { x: -620, y: 850 },
+					position: { x: -900, y: 650 },
 					children: [],
 				},
 				{
 					id: "632",
 					label: "Adobe Photoshop",
-					position: { x: -630, y: 920 },
+					position: { x: -910, y: 730 },
 					children: [],
 				},
 				{
 					id: "633",
 					label: "Corel VideoStudio",
-					position: { x: -630, y: 990 },
+					position: { x: -910, y: 810 },
 					children: [],
 				},
 				{
 					id: "634",
 					label: "SketchBook Pro",
-					position: { x: -620, y: 1060 },
+					position: { x: -900, y: 890 },
 					children: [],
 				},
 			],
@@ -656,28 +721,27 @@ const others = {
 		{
 			id: "64",
 			label: "Languages",
-			position: { x: -70, y: 750 },
+			position: { x: -320, y: 650 },
 			children: [
 				{
 					id: "641",
 					label: "Python",
-					position: { x: -270, y: 870 },
+					position: { x: -520, y: 770 },
 					children: [],
 				},
 				{
 					id: "642",
 					label: "Kotlin",
-					position: { x: -270, y: 950 },
+					position: { x: -450, y: 900 },
 					children: [],
 				},
 			],
 		},
 	],
 };
-
 const cells = {
 	id: "1",
 	label: "My skills",
 	position: { x: 0, y: 0 },
-	children: [fe, be, tools, others],
+	children: [fe, be, tools, others, devops],
 };
