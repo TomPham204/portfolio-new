@@ -17,7 +17,7 @@ export default function Resume() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 20) {
+			if (window.scrollY > 30) {
 				setShowArrow(false);
 			} else {
 				setShowArrow(true);

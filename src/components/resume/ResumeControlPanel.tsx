@@ -11,7 +11,7 @@ export default function ResumeControlPanel(props: ResumeControlPanelProps) {
 
 	useEffect(() => {
 		props.notifyViewChange(viewMode);
-	}, [props, viewMode]);
+	}, [viewMode]);
 
 	return (
 		<div className="hidden lg:flex items-center bg-[#e4e4e465] backdrop-blur-xs z-20 mx-auto">
