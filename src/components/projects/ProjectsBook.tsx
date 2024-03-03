@@ -126,7 +126,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 							key={index}
 							className="inner-page w-full border border-[#c2b5a3] p-8 bg-[#fdfaf7] space-y-3 italic"
 						>
-							<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-[Handlee]">
+							<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-Handlee">
 								{project.title}
 							</p>
 							<p className="text-sm md:text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">
@@ -189,7 +189,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 							key={index}
 							className="inner-page w-full border border-[#c2b5a3] p-8 bg-[#fdfaf7] space-y-3 italic"
 						>
-							<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-[Handlee]">
+							<p className="text-lg md:text-2xl font-bold text-center text-orange-900 font-Handlee">
 								{project.title}
 							</p>
 							<p className="text-sm md:text-lg italic text-center text-yellow-700 font-PatrickHand tracking-wide">

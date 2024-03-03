@@ -36,8 +36,8 @@ export default function SidePanel() {
 				</button>
 				<Link
 					href="https://tompham-portfolio.vercel.app"
-					target="_self"
-					className="relative w-full -translate-x-0.5"
+					target="_blank"
+					className="relative w-full -translate-x-0.5 hover:brightness-110 transition-all duration-300"
 				>
 					<Gear className="animate-spin-slow-reverse absolute top-[9px] left-[35%] opacity-30" />
 					<p className="font-bold tracking-tighter text-2xl text-gradient text-center absolute left-1/4">

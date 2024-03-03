@@ -52,7 +52,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="w-full lg:w-1/2 h-full max-h-[40rem] lg:h-5/6 flex flex-col gap-5 justify-around items-center">
-					<p className="font-['Pacifico'] text-7xl lg:text-10xl xl:text-12xl font-bold w-full text-center cursor-default">
+					<p className="font-Pacifico text-7xl lg:text-10xl xl:text-12xl font-bold w-full text-center cursor-default">
 						Meet
 					</p>
 					<p className="font-DancingScript font-bold text-7xl lg:text-10xl xl:text-12xl text-gradient w-full text-center cursor-default">
@@ -73,7 +73,7 @@ const selfIntroduction = [
 	'<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I\'m a web developer and a resource designer.</p>',
 	'<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I make jokes when I\'m uncomfortable.</p>',
 	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm an INFJ-A. My favorite pastime is collecting.</p>`,
-	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm extremely bad with recognizing faces and names.</p>`,
+	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm bad at recognizing faces and names.</p>`,
 	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I seek self-improvement and a diverse range of knowledge.</p>`,
 	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I'm always open to new opportunities in life.<p>`,
 	`<p class="font-PatrickHand font-bold italic text-2xl tracking-wider">I find sleep cycle interesting.<p>`,

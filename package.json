@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-pageflip": "^2.0.3",
     "reactflow": "^11.10.4",
+    "sharp": "^0.33.2",
     "tailwind-scrollbar-hide": "^1.1.7",
     "typewriter-effect": "^2.21.0"
   },

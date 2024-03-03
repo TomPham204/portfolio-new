@@ -20,22 +20,11 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				MouseMemoirs: ["Mouse Memoirs", ...fontFamily.sans],
-				DancingScript: ["Dancing Script", ...fontFamily.serif],
-				PatrickHand: ["Patrick Hand", ...fontFamily.serif],
-				NotoSansKR: ["Noto Sans KR", ...fontFamily.sans],
-				logo: [
-					"Mouse Memoirs",
-					"sans-serif",
-					...fontFamily.sans,
-					"cursive",
-				],
-				menu: [
-					"Mouse Memoirs",
-					"sans-serif",
-					...fontFamily.sans,
-					"cursive",
-				],
+				MouseMemoirs: ["var(--font-mouseMemoirs)"],
+				DancingScript: ["var(--font-dancingScript)"],
+				PatrickHand: ["var(--font-patrickHand)"],
+				Handlee: ["var(--font-handlee)"],
+				Pacifico: ["var(--font-pacifico)"],
 			},
 			fontSize: {
 				...fontSize,

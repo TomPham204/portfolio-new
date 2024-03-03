@@ -38,23 +38,23 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 					break;
 				case "2":
 					classes +=
-						"bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 border-fuchsia-500 ";
+						"bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 border-fuchsia-500 font-bold ";
 					break;
 				case "3":
 					classes +=
-						"bg-gradient-to-br from-green-500 to-cyan-500 text-neutral-50 border-green-500 ";
+						"bg-gradient-to-br from-green-500 to-cyan-500 text-neutral-50 border-green-500 font-bold ";
 					break;
 				case "4":
 					classes +=
-						"bg-gradient-to-br from-blue-500 to-cyan-500 text-neutral-50 border-blue-500 ";
+						"bg-gradient-to-br from-blue-500 to-cyan-500 text-neutral-50 border-blue-500 font-bold ";
 					break;
 				case "5":
 					classes +=
-						"bg-gradient-to-br from-yellow-400 to-orange-500 text-neutral-50 border-orange-500 ";
+						"bg-gradient-to-br from-yellow-400 to-orange-500 text-neutral-50 border-orange-500 font-bold ";
 					break;
 				case "6":
 					classes +=
-						"bg-gradient-to-br from-red-500 to-pink-300 text-neutral-50 border-red-500 ";
+						"bg-gradient-to-br from-red-500 to-pink-300 text-neutral-50 border-red-500 font-bold ";
 					break;
 			}
 		} else {
@@ -65,7 +65,8 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 			else if (id.startsWith("6")) classes += "border-red-500";
 		}
 
-		if (data.isHighlighted) classes += " saturate-200 hue-rotate-30 ";
+		if (data.isHighlighted)
+			classes += " saturate-150 brightness-110 hue-rotate-[10deg] ";
 		return classes;
 	};
 
@@ -146,7 +147,7 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 
 			<div
 				className={
-					"text-lg text-center min-w-[9rem] p-2 border-2 cursor-pointer bg-white transition-all duration-200 rounded " +
+					"text-lg text-center min-w-[9rem] p-2 border-[3px] cursor-pointer bg-neutral-50 transition-all duration-200 rounded " +
 					getNodeStyleById(data.id!)
 				}
 			>
