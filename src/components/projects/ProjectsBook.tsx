@@ -148,7 +148,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									<img
 										src={project.preview}
 										alt={`Project ${project.title}'s preview`}
-										className="object-contain w-full h-auto max-h-[50%] my-2 hover:scale-105 transition-all duration-300"
+										className="object-contain w-full h-auto max-h-[50%] my-2 grayscale-[.01] hover:grayscale-0 sepia-[.50] hover:sepia-0 hover:brightness-110 transition-all duration-300"
 									/>
 								))}
 							<div className="flex flex-col gap-3 font-PatrickHand">
@@ -211,7 +211,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									<img
 										src={project.preview}
 										alt={`Project ${project.title}'s preview`}
-										className="object-contain w-full h-auto max-h-[50%] my-2 hover:scale-105 transition-all duration-300"
+										className="object-contain w-full h-auto max-h-[50%] my-2 grayscale-[.01] hover:grayscale-0 sepia-[.50] hover:sepia-0 hover:brightness-110 transition-all duration-300"
 									/>
 								))}
 							<div className="flex flex-col gap-3 font-PatrickHand">
@@ -220,7 +220,7 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 									.map((line: string, i: number) => (
 										<p
 											key={i}
-											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify"
+											className="text-sm md:text-lg text-[#785e3a] tracking-wider text-justify w-full overflow-hidden"
 										>
 											{line}
 										</p>
