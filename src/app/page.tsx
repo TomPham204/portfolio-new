@@ -1,11 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import ContactPanel from "@/components/common/ContactPanel";
 import Typewriter from "typewriter-effect";
 import "@/styles/index.css";
 import ProfileImage from "@/components/index/ProfileImage";
-import TechMindmap from "@/components/index/TechMindmap";
+// import TechMindmap from "@/components/index/TechMindmap";
 import { useEffect } from "react";
+
+const TechMindmap = dynamic(() => import("@/components/index/TechMindmap"), {
+	ssr: true,
+});
 
 export default function Home() {
 	useEffect(() => {
@@ -23,10 +28,9 @@ export default function Home() {
 			}
 		};
 		const scrollHandler = (event: WheelEvent) => {
-			event.preventDefault();
 			scroll(event);
 		};
-		window.addEventListener("wheel", scrollHandler);
+		window.addEventListener("wheel", scrollHandler, { passive: true });
 		return () => window.removeEventListener("wheel", scrollHandler);
 	});
 
