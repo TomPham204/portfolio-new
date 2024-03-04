@@ -57,7 +57,7 @@ export default function Resume() {
 			{viewMode == "legacy" && <ResumeLegacyDownloadPanel />}
 			<div className="h-full w-full">
 				{viewMode == "legacy" && (
-					<div className="h-full w-full p-5 flex flex-col items-center gap-12 mt-6">
+					<div className="h-full w-full p-5 flex flex-col items-center gap-8 mt-6">
 						<img
 							src="/assets/resume/PhamCongTuan - Fullstack-1.png"
 							alt="Resume page 1"
