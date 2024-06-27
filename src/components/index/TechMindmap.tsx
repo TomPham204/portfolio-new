@@ -511,7 +511,7 @@ const devops = {
 		},
 		{
 			id: "42",
-			label: "Containers",
+			label: "Containerization",
 			position: { x: 200, y: 620 },
 			children: [
 				{
@@ -607,7 +607,7 @@ const tools = {
 		},
 		{
 			id: "52",
-			label: "Container",
+			label: "Containerization",
 			position: { x: -650, y: -130 },
 			children: [
 				{
