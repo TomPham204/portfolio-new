@@ -33,7 +33,7 @@
 	z-index: -1;
 	top: 0;
 	left: 0;
-	animation: spin 4s linear infinite;
+	animation: cardBorderSpin 4s linear infinite;
 }
 
 .card-wrapper .flip {
@@ -67,7 +67,7 @@
 	transform: rotateY(180deg);
 }
 
-@keyframes spin {
+@keyframes cardBorderSpin {
 	0% {
 		--rotate: 0deg;
 	}
