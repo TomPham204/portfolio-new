@@ -34,7 +34,7 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 			switch (id) {
 				case "1":
 					classes +=
-						"bg-gradient-to-br from-sky-800 to-fuchsia-800 text-neutral-50 font-bold brightness-110 animate-hue-rotate ";
+						"bg-gradient-to-br from-sky-800 to-fuchsia-800 text-neutral-50 font-bold brightness-125 animate-hue-rotate ";
 					break;
 				case "2":
 					classes +=
@@ -501,12 +501,12 @@ const devops = {
 			label: "CI/CD",
 			position: { x: 0, y: 520 },
 			children: [
-				// {
-				// 	id: "411",
-				// 	label: "GitHub Actions",
-				// 	position: { x: -200, y: 0 },
-				// 	children: [],
-				// },
+				{
+					id: "411",
+					label: "Jenkins",
+					position: { x: -100, y: 750 },
+					children: [],
+				},
 			],
 		},
 		{
@@ -517,13 +517,13 @@ const devops = {
 				{
 					id: "421",
 					label: "Docker",
-					position: { x: 120, y: 850 },
+					position: { x: 250, y: 850 },
 					children: [],
 				},
 				{
 					id: "422",
 					label: "Kubernetes",
-					position: { x: 300, y: 880 },
+					position: { x: 400, y: 770 },
 					children: [],
 				},
 			],
@@ -556,6 +556,12 @@ const devops = {
 					id: "441",
 					label: "GCP",
 					position: { x: 850, y: 370 },
+					children: [],
+				},
+				{
+					id: "442",
+					label: "AWS",
+					position: { x: 850, y: 480 },
 					children: [],
 				},
 			],
