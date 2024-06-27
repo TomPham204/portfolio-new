@@ -11,6 +11,7 @@ export default function Resume() {
 	const [arrowAnimation, setArrowAnimation] = useState(true);
 
 	const notifyViewChange = (mode: string = "compact") => {
+		console.log(mode, mode == "legacy");
 		setViewMode(mode);
 		setShowArrow(mode == "legacy");
 	};
@@ -42,7 +43,9 @@ export default function Resume() {
 						(arrowAnimation
 							? "animate-hue-rotate"
 							: "animate-none") +
-						(viewMode != "legacy" ? " hidden" : " block")
+						(viewMode != "legacy"
+							? " hidden lg:hidden"
+							: " block lg:block")
 					}
 				>
 					<Image
