@@ -142,13 +142,13 @@ export default function ProjectsBook(props: ProjectsBookProps) {
 										preload="auto"
 										disableRemotePlayback
 										playsInline
-										className="object-contain w-full h-auto max-h-[50%] my-2"
+										className="object-contain w-full h-auto max-h-[50%] my-2 shadow-sm"
 									/>
 								) : (
 									<img
 										src={project.preview}
 										alt={`Project ${project.title}'s preview`}
-										className="object-contain w-full h-auto max-h-[50%] my-2 grayscale-[.01] hover:grayscale-0 sepia-[.20] hover:sepia-0 hover:brightness-110 transition-all duration-300"
+										className="object-contain w-full h-auto max-h-[50%] my-2 grayscale-[.01] hover:grayscale-0 sepia-[.20] hover:sepia-0 hover:brightness-110 transition-all duration-300 shadow-sm"
 									/>
 								))}
 							<div className="flex flex-col gap-3 font-PatrickHand">
@@ -360,7 +360,6 @@ const webProjects: Project[] = [
 			"Features: Authentication, Google/Github login, Stripe payment, dynamic component, complex log filtering, charts.",
 			"Built with VueJS + NestJS + PostgreSQL.",
 		],
-		link: "https://dapi.massbitroute.net/",
 		preview: "/assets/projects/massbit.jpg",
 		previewType: "image",
 	},
@@ -372,6 +371,8 @@ const webProjects: Project[] = [
 			"Built with VueJS + Tailwind CSS + NestJS + PostgreSQL.",
 			"Responsible for everything from design, code, to deployment",
 		],
+		link: "https://hellotutors.vercel.app/",
+		preview: "/assets/projects/hellotutors.png",
 		previewType: "image",
 	},
 	{

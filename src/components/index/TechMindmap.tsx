@@ -346,19 +346,19 @@ const fe = {
 				{
 					id: "211",
 					label: "HTML",
-					position: { x: -370, y: -570 },
+					position: { x: -320, y: -570 },
 					children: [],
 				},
 				{
 					id: "212",
 					label: "CSS",
-					position: { x: -450, y: -480 },
+					position: { x: -430, y: -500 },
 					children: [],
 				},
 				{
 					id: "213",
 					label: "JavaScript",
-					position: { x: -420, y: -380 },
+					position: { x: -400, y: -400 },
 					children: [],
 				},
 			],
@@ -377,7 +377,7 @@ const fe = {
 				{
 					id: "222",
 					label: "NextJS",
-					position: { x: -200, y: -800 },
+					position: { x: -180, y: -800 },
 					children: [],
 				},
 				{
@@ -499,12 +499,18 @@ const devops = {
 		{
 			id: "41",
 			label: "CI/CD",
-			position: { x: 0, y: 520 },
+			position: { x: 20, y: 580 },
 			children: [
 				{
 					id: "411",
 					label: "Jenkins",
-					position: { x: -100, y: 750 },
+					position: { x: -70, y: 850 },
+					children: [],
+				},
+				{
+					id: "412",
+					label: "Github Actions",
+					position: { x: 100, y: 930 },
 					children: [],
 				},
 			],
@@ -512,18 +518,18 @@ const devops = {
 		{
 			id: "42",
 			label: "Containerization",
-			position: { x: 200, y: 620 },
+			position: { x: 220, y: 650 },
 			children: [
 				{
 					id: "421",
 					label: "Docker",
-					position: { x: 250, y: 850 },
+					position: { x: 280, y: 850 },
 					children: [],
 				},
 				{
 					id: "422",
 					label: "Kubernetes",
-					position: { x: 400, y: 770 },
+					position: { x: 450, y: 750 },
 					children: [],
 				},
 			],
@@ -531,7 +537,7 @@ const devops = {
 		{
 			id: "43",
 			label: "Monitoring",
-			position: { x: 400, y: 580 },
+			position: { x: 410, y: 580 },
 			children: [
 				// {
 				// 	id: "431",
@@ -589,37 +595,31 @@ const tools = {
 		{
 			id: "51",
 			label: "Version Control",
-			position: { x: -600, y: -250 },
+			position: { x: -630, y: -230 },
 			children: [
 				{
 					id: "511",
 					label: "Git",
-					position: { x: -820, y: -400 },
+					position: { x: -840, y: -370 },
 					children: [],
 				},
 				{
 					id: "512",
 					label: "Bitbucket",
-					position: { x: -870, y: -320 },
+					position: { x: -870, y: -280 },
 					children: [],
 				},
 			],
 		},
 		{
 			id: "52",
-			label: "Containerization",
-			position: { x: -650, y: -130 },
+			label: "Inspection",
+			position: { x: -650, y: -120 },
 			children: [
 				{
 					id: "521",
 					label: "Lens",
-					position: { x: -950, y: -200 },
-					children: [],
-				},
-				{
-					id: "522",
-					label: "WSL",
-					position: { x: -970, y: -120 },
+					position: { x: -950, y: -180 },
 					children: [],
 				},
 			],
@@ -632,22 +632,28 @@ const tools = {
 				{
 					id: "531",
 					label: "Redmine",
-					position: { x: -950, y: -30 },
+					position: { x: -950, y: -50 },
 					children: [],
 				},
 				{
 					id: "532",
 					label: "Clickup",
-					position: { x: -970, y: 50 },
+					position: { x: -970, y: 30 },
 					children: [],
 				},
 				{
 					id: "533",
 					label: "Trello",
-					position: { x: -940, y: 130 },
+					position: { x: -940, y: 110 },
 					children: [],
 				},
 			],
+		},
+		{
+			id: "54",
+			label: "Nginx",
+			position: { x: -610, y: -330 },
+			children: [],
 		},
 	],
 };
@@ -659,7 +665,7 @@ const others = {
 		{
 			id: "61",
 			label: "English",
-			position: { x: -570, y: 270 },
+			position: { x: -600, y: 270 },
 			children: [
 				{
 					id: "611",
@@ -670,7 +676,7 @@ const others = {
 				{
 					id: "612",
 					label: "IELTS 7.0",
-					position: { x: -880, y: 320 },
+					position: { x: -900, y: 320 },
 					children: [],
 				},
 			],
@@ -678,18 +684,18 @@ const others = {
 		{
 			id: "62",
 			label: "Agile",
-			position: { x: -570, y: 400 },
+			position: { x: -620, y: 400 },
 			children: [
 				{
 					id: "621",
 					label: "Scrum",
-					position: { x: -850, y: 430 },
+					position: { x: -880, y: 430 },
 					children: [],
 				},
 				{
 					id: "622",
 					label: "Kanban",
-					position: { x: -850, y: 510 },
+					position: { x: -870, y: 510 },
 					children: [],
 				},
 			],
@@ -697,7 +703,7 @@ const others = {
 		{
 			id: "63",
 			label: "Multimedia",
-			position: { x: -500, y: 550 },
+			position: { x: -580, y: 570 },
 			children: [
 				{
 					id: "631",
@@ -733,13 +739,19 @@ const others = {
 				{
 					id: "641",
 					label: "Python",
-					position: { x: -520, y: 770 },
+					position: { x: -520, y: 800 },
 					children: [],
 				},
 				{
 					id: "642",
 					label: "Kotlin",
-					position: { x: -450, y: 900 },
+					position: { x: -450, y: 930 },
+					children: [],
+				},
+				{
+					id: "643",
+					label: "JavaScript",
+					position: { x: -280, y: 870 },
 					children: [],
 				},
 			],
