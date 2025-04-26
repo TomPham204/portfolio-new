@@ -58,7 +58,7 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 					break;
 				case '7':
 					classes +=
-						'bg-gradient-to-br from-yellow-600 to-amber-800 text-neutral-50 border-amber-700 font-bold ';
+						'bg-gradient-to-br from-yellow-600 to-amber-800 text-neutral-50 !border-amber-700 font-bold ';
 					break;
 				default:
 					break;
@@ -67,7 +67,7 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 			if (id.startsWith("2")) classes += "!border-fuchsia-500";
 			else if (id.startsWith("3")) classes += "border-green-500";
 			else if (id.startsWith("4")) classes += "border-blue-500";
-			else if (id.startsWith("5")) classes += "border-amber-500";
+			else if (id.startsWith("5")) classes += "!border-amber-500";
 			else if (id.startsWith("6")) classes += "border-red-500";
 			else if (id.startsWith("7")) classes += "border-orange-900";
 		}
