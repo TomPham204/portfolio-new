@@ -32,37 +32,44 @@ const CustomNode = ({ data }: CustomNodeProps) => {
 		let classes = "border-black ";
 		if (parseInt(id) < 10) {
 			switch (id) {
-				case "1":
+				case '1':
 					classes +=
-						"bg-gradient-to-br from-sky-800 to-fuchsia-800 text-neutral-50 font-bold brightness-125 animate-hue-rotate ";
+						'bg-gradient-to-br from-sky-800 to-fuchsia-800 text-neutral-50 font-bold brightness-125 animate-hue-rotate ';
 					break;
-				case "2":
+				case '2':
 					classes +=
-						"bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 border-fuchsia-500 font-bold ";
+						'bg-gradient-to-br from-violet-500 to-fuchsia-500 text-neutral-50 border-fuchsia-500 font-bold ';
 					break;
-				case "3":
+				case '3':
 					classes +=
-						"bg-gradient-to-br from-green-500 to-cyan-500 text-neutral-50 border-green-500 font-bold ";
+						'bg-gradient-to-br from-green-600 to-cyan-500 text-neutral-50 border-green-500 font-bold ';
 					break;
-				case "4":
+				case '4':
 					classes +=
-						"bg-gradient-to-br from-blue-500 to-cyan-500 text-neutral-50 border-blue-500 font-bold ";
+						'bg-gradient-to-br from-blue-500 to-cyan-500 text-neutral-50 border-blue-500 font-bold ';
 					break;
-				case "5":
+				case '5':
 					classes +=
-						"bg-gradient-to-br from-yellow-400 to-orange-500 text-neutral-50 border-orange-500 font-bold ";
+						'bg-gradient-to-br from-yellow-300 to-orange-400 text-neutral-50 border-yellow-400 font-bold ';
 					break;
-				case "6":
+				case '6':
 					classes +=
-						"bg-gradient-to-br from-red-500 to-pink-300 text-neutral-50 border-red-500 font-bold ";
+						'bg-gradient-to-br from-red-500 to-pink-300 text-neutral-50 border-red-500 font-bold ';
+					break;
+				case '7':
+					classes +=
+						'bg-gradient-to-br from-yellow-600 to-amber-800 text-neutral-50 border-amber-700 font-bold ';
+					break;
+				default:
 					break;
 			}
 		} else {
 			if (id.startsWith("2")) classes += "!border-fuchsia-500";
 			else if (id.startsWith("3")) classes += "border-green-500";
 			else if (id.startsWith("4")) classes += "border-blue-500";
-			else if (id.startsWith("5")) classes += "border-orange-500";
+			else if (id.startsWith("5")) classes += "border-amber-500";
 			else if (id.startsWith("6")) classes += "border-red-500";
+			else if (id.startsWith("7")) classes += "border-orange-900";
 		}
 
 		if (data.isHighlighted)
@@ -179,7 +186,7 @@ function getNodesAndConnections(data: any) {
 	const connections: Array<any> = [];
 
 	function traverse(node: any) {
-		if (node.children.length > 0) {
+		if (node.children?.length > 0) {
 			node.children.forEach((child: any) => {
 				// position
 				if (
@@ -346,7 +353,7 @@ const fe = {
 				{
 					id: "211",
 					label: "HTML",
-					position: { x: -320, y: -570 },
+					position: { x: -330, y: -580 },
 					children: [],
 				},
 				{
@@ -421,7 +428,7 @@ const fe = {
 				{
 					id: "242",
 					label: "Bootstrap",
-					position: { x: 470, y: -450 },
+					position: { x: 480, y: -460 },
 					children: [],
 				},
 			],
@@ -429,114 +436,126 @@ const fe = {
 	],
 };
 const be = {
-	id: "3",
-	label: "Back-end",
-	position: { x: 300, y: 50 },
+	id: '3',
+	label: 'Back-end',
+	position: { x: 320, y: -150 },
 	children: [
 		{
-			id: "31",
-			label: "Frameworks & Libs",
-			position: { x: 570, y: -100 },
+			id: '31',
+			label: 'Frameworks & Libs',
+			position: { x: 660, y: -225 },
 			children: [
 				{
-					id: "311",
-					label: "NestJS",
-					position: { x: 850, y: -300 },
+					id: '311',
+					label: 'NestJS',
+					position: { x: 850, y: -390 },
+					children: [],
+				},
+				{
+					id: '312',
+					label: 'ExpressJS',
+					position: { x: 880, y: -300 },
 					children: [],
 				},
 			],
 		},
 		{
-			id: "32",
-			label: "GraphQL",
-			position: { x: 540, y: 190 },
+			id: '32',
+			label: 'GraphQL',
+			position: { x: 550, y: 35 },
 			children: [],
 		},
 		{
-			id: "33",
-			label: "RESTful APIs",
-			position: { x: 540, y: -200 },
+			id: '33',
+			label: 'RESTful APIs',
+			position: { x: 625, y: -305 },
 			children: [],
 		},
 		{
-			id: "34",
-			label: "WebSockets",
-			position: { x: 600, y: 95 },
+			id: '34',
+			label: 'WebSockets',
+			position: { x: 600, y: -50 },
 			children: [],
 		},
 		{
-			id: "35",
-			label: "Databases",
-			position: { x: 620, y: -5 },
+			id: '35',
+			label: 'Databases',
+			position: { x: 630, y: -140 },
 			children: [
 				{
-					id: "351",
-					label: "PostgreSQL",
-					position: { x: 920, y: -100 },
+					id: '351',
+					label: 'PostgreSQL',
+					position: { x: 920, y: -210 },
 					children: [],
 				},
 				{
-					id: "352",
-					label: "QuestDB",
-					position: { x: 920, y: -30 },
+					id: '352',
+					label: 'QuestDB',
+					position: { x: 920, y: -125 },
 					children: [],
 				},
 				{
-					id: "353",
-					label: "ORM",
-					position: { x: 920, y: 40 },
+					id: '353',
+					label: 'MySQL',
+					position: { x: 910, y: -40 },
 					children: [],
 				},
 			],
+		},
+		{
+			id: '36',
+			label: 'TypeORM',
+			position: { x: 580, y: -380 },
+			children: [],
 		},
 	],
 };
 const devops = {
-	id: "4",
-	label: "DevOps",
+	id: '4',
+	label: 'DevOps',
 	position: { x: 120, y: 270 },
 	children: [
 		{
-			id: "41",
-			label: "CI/CD",
+			id: '41',
+			label: 'CI/CD',
 			position: { x: 20, y: 580 },
 			children: [
 				{
-					id: "411",
-					label: "Jenkins",
+					id: '411',
+					label: 'Jenkins',
 					position: { x: -70, y: 850 },
 					children: [],
 				},
 				{
-					id: "412",
-					label: "Github Actions",
+					id: '412',
+					label: 'Github Actions',
 					position: { x: 100, y: 930 },
 					children: [],
 				},
 			],
 		},
 		{
-			id: "42",
-			label: "Containerization",
+			id: '42',
+			label: 'Containerization',
 			position: { x: 220, y: 650 },
 			children: [
 				{
-					id: "421",
-					label: "Docker",
+					id: '421',
+					label: 'Docker',
 					position: { x: 280, y: 850 },
 					children: [],
 				},
 				{
-					id: "422",
-					label: "Kubernetes",
+					id: '422',
+					label: 'Kubernetes',
 					position: { x: 450, y: 750 },
 					children: [],
 				},
 			],
 		},
 		{
-			id: "43",
-			label: "Monitoring",
+			id: '43',
+			label: 'Monitoring',
 			position: { x: 410, y: 580 },
 			children: [
 				// {
@@ -554,27 +573,30 @@ const devops = {
 			],
 		},
 		{
-			id: "44",
-			label: "Cloud",
+			id: '44',
+			label: 'Cloud',
 			position: { x: 570, y: 400 },
 			children: [
 				{
-					id: "441",
-					label: "GCP",
+					id: '441',
+					label: 'GCP',
 					position: { x: 850, y: 370 },
 					children: [],
 				},
 				{
-					id: "442",
-					label: "AWS",
+					id: '442',
+					label: 'AWS',
 					position: { x: 850, y: 480 },
-					children: [],
+					children: [
+						{ id: '4421', label: 'Cloudwatch', position: { x: 1060, y: 440 } },
+						{ id: '4422', label: 'EC2', position: { x: 1040, y: 550 } },
+					],
 				},
 			],
 		},
 		{
-			id: "45",
-			label: "Security",
+			id: '45',
+			label: 'Security',
 			position: { x: 570, y: 500 },
 			children: [
 				// {
@@ -758,9 +780,19 @@ const others = {
 		},
 	],
 };
+const testing = {
+	id: '7',
+	label: 'QA',
+	position: { x: 310, y: 105 },
+	children: [
+		{ id: '71', label: 'Define testcases', position: { x: 650, y: 130 } },
+		{ id: '72', label: 'Jest', position: { x: 630, y: 205 } },
+		{ id: '73', label: 'Cypress', position: { x: 600, y: 280 } },
+	],
+};
 const cells = {
 	id: "1",
 	label: "My skills",
 	position: { x: 0, y: 0 },
-	children: [fe, be, tools, others, devops],
+	children: [fe, be, testing, tools, others, devops],
 };
