@@ -386,6 +386,14 @@ const webProjects: Project[] = [
 		previewType: "image",
 		preview: "/assets/projects/portfolio-v2.jpg",
 	},
+	{
+		title: 'InsurTech bodycheck systems',
+		descriptions: [
+			'Projects for Mediconcen Hong Kong\'s partners.',
+			'Built with NextJS + MUI + ExpressJS/NestJS + MySQL',
+			'Role: Full-stack developer',
+		],
+	},
 ];
 
 const otherProjects: Project[] = [
@@ -399,15 +407,15 @@ const otherProjects: Project[] = [
 		preview: "/assets/projects/aipbdet.png",
 		previewType: "image",
 	},
-	{
-		title: "Live Wallpapers",
-		descriptions: [
-			"Perfectly looped wallpaper videos.",
-			"Made with Corel VideoStudio, Adobe Premiere.",
-		],
-		preview: "/assets/projects/livewallpaper2.mp4",
-		previewType: "video",
-	},
+	// {
+	// 	title: "Live Wallpapers",
+	// 	descriptions: [
+	// 		"Perfectly looped wallpaper videos.",
+	// 		"Made with Corel VideoStudio, Adobe Premiere.",
+	// 	],
+	// 	preview: "/assets/projects/livewallpaper2.mp4",
+	// 	previewType: "video",
+	// },
 	{
 		title: "Osu! Skin: Slim-eX",
 		descriptions: [

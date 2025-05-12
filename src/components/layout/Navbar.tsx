@@ -47,7 +47,7 @@ const NavigationBar = () => {
 						Story
 					</Link>
 					<span className='absolute top-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-70 transition-opacity duration-300 w-max'>
-						From portfolio V1
+						From Portfolio V1
 					</span>
 				</div>
 				<Link
