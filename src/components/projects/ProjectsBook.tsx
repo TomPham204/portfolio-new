@@ -371,7 +371,6 @@ const webProjects: Project[] = [
 			"Built with VueJS + Tailwind CSS + NestJS + PostgreSQL.",
 			"Responsible for everything from design, code, to deployment",
 		],
-		link: "https://hellotutors.vercel.app/",
 		preview: "/assets/projects/hellotutors.png",
 		previewType: "image",
 	},
@@ -389,10 +388,22 @@ const webProjects: Project[] = [
 	{
 		title: 'InsurTech bodycheck systems',
 		descriptions: [
-			'Projects for Mediconcen Hong Kong\'s partners.',
-			'Built with NextJS + MUI + ExpressJS/NestJS + MySQL',
+			"Projects for Mediconcen Hong Kong's partners.",
+			'Built with NextJS + MUI + ExpressJS/NestJS + MySQL.',
 			'Role: Full-stack developer',
 		],
+		previewType: 'image',
+		preview: '/assets/projects/mcc-1.jpg',
+	},
+	{
+		title: 'Insurance claim automation system',
+		descriptions: [
+			"Project for Mediconcen Hong Kong's partner.",
+			'Built with NextJS + MUI + ExpressJS/NestJS + MySQL.',
+			'Role: Full-stack developer',
+		],
+		previewType: 'image',
+		preview: '/assets/projects/mcc-2.jpg',
 	},
 ];
 
@@ -407,15 +418,15 @@ const otherProjects: Project[] = [
 		preview: "/assets/projects/aipbdet.png",
 		previewType: "image",
 	},
-	// {
-	// 	title: "Live Wallpapers",
-	// 	descriptions: [
-	// 		"Perfectly looped wallpaper videos.",
-	// 		"Made with Corel VideoStudio, Adobe Premiere.",
-	// 	],
-	// 	preview: "/assets/projects/livewallpaper2.mp4",
-	// 	previewType: "video",
-	// },
+	{
+		title: "Live Wallpapers",
+		descriptions: [
+			"Perfectly looped wallpaper videos.",
+			"Made with Corel VideoStudio, Adobe Premiere.",
+		],
+		preview: "/assets/projects/livewallpaper1.mp4",
+		previewType: "video",
+	},
 	{
 		title: "Osu! Skin: Slim-eX",
 		descriptions: [
