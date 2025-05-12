@@ -393,7 +393,7 @@ const webProjects: Project[] = [
 			'Role: Full-stack developer',
 		],
 		previewType: 'image',
-		preview: '/assets/projects/mcc-1.jpg',
+		preview: '/assets/projects/mcc-1.png',
 	},
 	{
 		title: 'Insurance claim automation system',
@@ -403,7 +403,7 @@ const webProjects: Project[] = [
 			'Role: Full-stack developer',
 		],
 		previewType: 'image',
-		preview: '/assets/projects/mcc-2.jpg',
+		preview: '/assets/projects/mcc-2.png',
 	},
 ];
 
